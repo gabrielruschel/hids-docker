@@ -3,13 +3,13 @@
 In this repository are presented a docker dataset based on system calls and the source code used for experimental evaluation of this data, more details are presented in [HIDS Docker Information] (you can read the same README in [portugues](README.pt.md)):
 
 ## Table of Contents ##
-- [HIDS Docker Information](#-HIDS-Docker-Information)
-- [How do I get set up?](#-How-do-I-get-set-up?)
-- [Install](#-install)
-- [Setup](#-setup)
-- [Examples](#-examples)
-- [Contribution guidelines](#-Contribution-guidelines)
-- [License](#-license)
+- [HIDS Docker Information](#hids-docker-information)
+- [How do I get set up?](#wow-do-i-get-set-up?)
+- [Install](#install)
+- [Setup](#setup)
+- [Examples](#examples)
+- [Contribution guidelines](#contribution-guidelines)
+- [License](#license)
 
 ## HIDS Docker Information ##
 
