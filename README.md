@@ -4,7 +4,7 @@ In this repository are presented a docker dataset based on system calls and the 
 
 ## Table of Contents ##
 - [HIDS Docker Information](#hids-docker-information)
-- [How do I get set up?](#wow-do-i-get-set-up?)
+- [How do I get set up?](#how-do-i-get-set-up?)
 - [Install](#install)
 - [Setup](#setup)
 - [Examples](#examples)
