@@ -78,7 +78,7 @@ Where the `tamanho_janela` (`window_size`) argument specifies the size of the wi
 It is possible to edit in the main section of the code which specific methods you want to test, and also change the form of construction of the windows (with all system calls or with filtering), changing the function used in `retrieve_dataset ()` (`sliding_window_raw` to work with all system calls or `sliding_window_filter` to perform the filtering).
 
 ## Contribution guidelines ##
-* gabrielruschel (Gabriel Ruschel Castanhel) (owner)
-* h31nr1ch (Tiago Heinrich) (contributor)
-* fabriciojoc (Fabrício Ceschin) (contributor)
-* maziero (Carlos Maziero) (contributor)
+* [gabrielruschel](https://github.com/gabrielruschel) (Gabriel Ruschel Castanhel) (owner)
+* [h31nr1ch](https://github.com/h31nr1ch) (Tiago Heinrich) (contributor)
+* [fabriciojoc](https://github.com/fabriciojoc) (Fabrício Ceschin) (contributor)
+* [cmaziero](https://github.com/cmaziero) (Carlos Maziero) (contributor)
