@@ -3,33 +3,36 @@ from syscalls import syscalls
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import LinearSVC
-from sklearn.svm import SVC
+# from sklearn.svm import LinearSVC
+# from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import OneClassSVM
 from sklearn.ensemble import IsolationForest
 from sklearn.ensemble import AdaBoostClassifier
 
-from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import precision_score
 
 import argparse
+import os
 
-WINDOW_SIZE         = 0
-N_NEIGHBORS         = 3
+WINDOW_SIZE = 0
+N_NEIGHBORS = 3
 
-LABEL_MULT_NORMAL   = 0
-LABEL_MULT_ANORMAL  = 1
+LABEL_MULT_NORMAL = 0
+LABEL_MULT_ANORMAL = 1
 
-LABEL_ONE_NORMAL    = 1
-LABEL_ONE_ANORMAL   = -1
+LABEL_ONE_NORMAL = 1
+LABEL_ONE_ANORMAL = -1
 
-BASE_NORMAL         = 'wordpress/v1/wordpress_normal_1'
-BASE_EXEC           = 'wordpress/v1/wordpress_exec_1_teste1'
+# BASE_NORMAL         = 'wordpress/v1/wordpress_normal_1'
+# BASE_EXEC           = 'wordpress/v1/wordpress_exec_1_teste1'
 # BASE_EXEC_TESTE     = 'wordpress_exec_1_teste2'
+
+FILES_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "wordpress", "{v}", "{b}")
+
 
 def sliding_window_filter(input_file):
     it = iter(input_file)
@@ -57,9 +60,10 @@ def sliding_window_filter(input_file):
             print(f'Threat para {elem} não encontrada')
             return
 
+
 def sliding_window_raw(seq):
     it = iter(seq)
-    result = tuple(syscalls[line.split(' ')[1] if line.startswith("---") else line.split('(')[0]]['id'] for line in islice(it,WINDOW_SIZE))
+    result = tuple(syscalls[line.split(' ')[1] if line.startswith("---") else line.split('(')[0]]['id'] for line in islice(it, WINDOW_SIZE))
     if len(result) == WINDOW_SIZE:
         yield result
     for elem in it:
@@ -68,14 +72,22 @@ def sliding_window_raw(seq):
         result = result[1:] + (syscalls[elem.split('(')[0]]['id'],)
         yield result
 
+
 def retrieve_dataset(filename):
     with open(filename, 'r') as input_file:
-        dataset = list(sliding_window_raw(input_file));
+        dataset = list(sliding_window_raw(input_file))
 
     return dataset
 
-def define_labels(base_normal,base_exec,label_normal,label_anormal):
+
+def define_labels(base_normal, base_exec, multi):
     labels = []
+
+    label_normal = LABEL_MULT_NORMAL if multi else LABEL_ONE_NORMAL
+    label_anormal = LABEL_MULT_ANORMAL if multi else LABEL_ONE_ANORMAL
+
+    print("LABEL NORMAL:", label_normal)
+    print("LABEL ANORMAL:", label_anormal)
 
     for window in base_normal:
         labels.append(label_normal)
@@ -85,20 +97,37 @@ def define_labels(base_normal,base_exec,label_normal,label_anormal):
 
     return labels
 
-def get_features_labels(label_normal,label_anormal):
 
-    labels = []
+def get_features():
 
-    # Base file
-    base_normal = retrieve_dataset(BASE_NORMAL)
+    path = FILES_PATH.format(v="v2", b="normal")
+    base_normal = []
+    base_exec = []
 
-    base_exec = retrieve_dataset(BASE_EXEC)
+    for file in os.listdir(path):
+        base_normal.extend(retrieve_dataset(os.path.join(path, file)))
 
-    labels = define_labels(base_normal,base_exec,label_normal,label_anormal)
+    path = FILES_PATH.format(v="v2", b="exec")
 
-    features = base_normal + base_exec
+    for file_exec in os.listdir(path):
+        base_exec.extend(retrieve_dataset(os.path.join(path, file_exec)))
 
-    return features,labels
+    return base_normal, base_exec
+
+# def get_features_labels(label_normal, label_anormal):
+#
+#     labels = []
+#
+#     # Base file
+#     base_normal = retrieve_dataset(BASE_NORMAL)
+#
+#     base_exec = retrieve_dataset(BASE_EXEC)
+#
+#     labels = define_labels(base_normal, base_exec, label_normal, label_anormal)
+#
+#     features = base_normal + base_exec
+#
+#     return features, labels
 
 # def forrest_alg():
 #
@@ -124,14 +153,17 @@ def get_features_labels(label_normal,label_anormal):
 #     print('\nNumero de anomalias detectadas: ', anom_count)
 #     print('\nTaxa de detecção ', anom_count/win_count )
 
-def naive_bayes():
+
+def naive_bayes(base_normal, base_exec):
 
     print("\n> Naive Bayes")
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    labels = define_labels(base_normal, base_exec, True)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     gnb = GaussianNB()
 
@@ -140,10 +172,9 @@ def naive_bayes():
 
     y_pred = gnb.predict(X_test)
 
-
     # base_teste = retrieve_dataset(BASE_EXEC_TESTE)
     # labels_teste = []
-    #
+
     # for elem in base_teste:
     #     labels_teste.append(1)
 
@@ -154,98 +185,110 @@ def naive_bayes():
     # print("\nWindows base teste: ",len(base_teste))
     # print("\nAccuracy: ", metrics.accuracy_score(labels_teste,predict))
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return gnb
+    return
 
-def kneighbors():
+
+def kneighbors(base_normal, base_exec):
 
     print("\n> K-Nearest Neighbors")
 
-    print('\nN_NEIGHBORS ' + str(N_NEIGHBORS))
+    print("N_NEIGHBORS", str(N_NEIGHBORS))
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    labels = define_labels(base_normal, base_exec, True)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features,labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
 
-    print("\n[...] Training the model")
+    print("[...] Training the model")
     knn.fit(X_train, y_train)
 
     y_pred = knn.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return knn
+    return
 
-def random_forest():
+
+def random_forest(base_normal, base_exec):
 
     print("\n> Random Forest")
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
+    labels = define_labels(base_normal, base_exec, True)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     rfc = RandomForestClassifier(n_estimators=100)
 
     rfc.fit(X_train, y_train)
     y_pred = rfc.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return rfc
+    return
 
-def ada_boost():
+
+def ada_boost(base_normal, base_exec):
     print("\n> Ada Boost")
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
+    labels = define_labels(base_normal, base_exec, True)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
 
     abc.fit(X_train, y_train)
     y_pred = abc.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return abc
+    return
 
-def multilayer_perceptron():
+
+def multilayer_perceptron(base_normal, base_exec):
     print("\n> Multilayer Perceptron")
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
+    labels = define_labels(base_normal, base_exec, True)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     mlp = MLPClassifier()
 
     mlp.fit(X_train, y_train)
     y_pred = mlp.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return mlp
+    return
 
 
 # def linear_svc():
@@ -268,58 +311,64 @@ def multilayer_perceptron():
 #
 #     return lsvc
 
-def one_class_svm():
+def one_class_svm(base_normal, base_exec):
     print("\n> One Class SVM")
 
-    print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_ONE_NORMAL,LABEL_ONE_ANORMAL)
+    print("[...] Retrieving datasets and labels")
+    # features, labels = get_features_labels(LABEL_ONE_NORMAL, LABEL_ONE_ANORMAL)
+    labels = define_labels(base_normal, base_exec, False)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     onesvm = OneClassSVM(gamma='scale', nu=0.01)
     # print("\n[...] Training model")
     trainX = []
 
-    for x,y in zip(X_train, y_train):
+    for x, y in zip(X_train, y_train):
         if (y == 1):
             trainX.append(x)
 
     onesvm.fit(trainX)
     y_pred = onesvm.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return onesvm
+    return
 
-def isolation_forest():
+
+def isolation_forest(base_normal, base_exec):
 
     print("\n> Isolation Forest")
 
     print("\n[...] Retrieving datasets and labels")
-    features,labels = get_features_labels(LABEL_ONE_NORMAL,LABEL_ONE_ANORMAL)
+    # features, labels = get_features_labels(LABEL_ONE_NORMAL, LABEL_ONE_ANORMAL)
+    labels = define_labels(base_normal, base_exec, False)
+    features = base_normal + base_exec
 
-    X_train,X_test,y_train,y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
 
     clf = IsolationForest()
 
     trainX = []
 
-    for x,y in zip(X_train, y_train):
+    for x, y in zip(X_train, y_train):
         if (y == 1):
             trainX.append(x)
 
     clf.fit(trainX)
     y_pred = clf.predict(X_test)
 
-    print("\nf1_score: ", f1_score(y_test, y_pred, average='binary'))
-    print("\nrecall_score: ", recall_score(y_test, y_pred, average='binary'))
-    print("\nprecision_score: ", precision_score(y_test, y_pred, average='binary'))
-    print("\n")
+    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("")
 
-    return clf
+    # return clf
+    return
 
 
 if __name__ == '__main__':
@@ -328,18 +377,19 @@ if __name__ == '__main__':
     parser.add_argument('window_size', help='window size')
     args = parser.parse_args()
 
-    # WINDOW_SIZE = int(1628 * float(args.percentage))
-    # print('\n --- WINDOW_SIZE ' + str(int((float(args.percentage) * 100))) + '% = ' + str(WINDOW_SIZE) + ' --- \n')
-
     WINDOW_SIZE = int(args.window_size)
 
     print('\n --- WINDOW_SIZE = ' + str(WINDOW_SIZE) + ' --- \n')
 
-    # naive_bayes()
-    #kneighbors()
-    #random_forest()
-    #multilayer_perceptron()
-    #ada_boost()
+    base_normal, base_exec = get_features()
+    # print("LEN NORMAL:", len(base_normal))
+    # print("LEN EXEC:", len(base_exec))
 
-    one_class_svm()
-    # isolation_forest()
+    naive_bayes(base_normal, base_exec)
+    kneighbors(base_normal, base_exec)
+    random_forest(base_normal, base_exec)
+    multilayer_perceptron(base_normal, base_exec)
+    ada_boost(base_normal, base_exec)
+
+    one_class_svm(base_normal, base_exec)
+    isolation_forest(base_normal, base_exec)
