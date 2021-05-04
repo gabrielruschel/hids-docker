@@ -44,8 +44,7 @@ def sliding_window_filter(input_file):
             if (syscalls[elem.split('(')[0]]['threat'] != 4):
                 result = result + (syscalls[elem.split('(')[0]]['id'],)
         else:
-            print(f'Threat para {elem} não encontrada')
-            return
+            raise Exception(f"Threat para {elem.split('(')[0]} não encontrada")
         if len(result) == WINDOW_SIZE:
             yield result
             break
@@ -57,8 +56,7 @@ def sliding_window_filter(input_file):
                 result = result[1:] + (syscalls[elem.split('(')[0]]['id'],)
                 yield result
         else:
-            print(f'Threat para {elem} não encontrada')
-            return
+            raise Exception(f"Threat para {elem.split('(')[0]} não encontrada")
 
 
 def sliding_window_raw(seq):
@@ -75,7 +73,7 @@ def sliding_window_raw(seq):
 
 def retrieve_dataset(filename):
     with open(filename, 'r') as input_file:
-        dataset = list(sliding_window_raw(input_file))
+        dataset = list(sliding_window_filter(input_file))
 
     return dataset
 
@@ -86,8 +84,8 @@ def define_labels(base_normal, base_exec, multi):
     label_normal = LABEL_MULT_NORMAL if multi else LABEL_ONE_NORMAL
     label_anormal = LABEL_MULT_ANORMAL if multi else LABEL_ONE_ANORMAL
 
-    print("LABEL NORMAL:", label_normal)
-    print("LABEL ANORMAL:", label_anormal)
+    # print("LABEL NORMAL:", label_normal)
+    # print("LABEL ANORMAL:", label_anormal)
 
     for window in base_normal:
         labels.append(label_normal)
@@ -167,7 +165,7 @@ def naive_bayes(base_normal, base_exec):
 
     gnb = GaussianNB()
 
-    print("\n[...] Training the model")
+    # print("\n[...] Training the model")
     gnb.fit(X_train, y_train)
 
     y_pred = gnb.predict(X_test)
@@ -344,7 +342,7 @@ def isolation_forest(base_normal, base_exec):
 
     print("\n> Isolation Forest")
 
-    print("\n[...] Retrieving datasets and labels")
+    print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_ONE_NORMAL, LABEL_ONE_ANORMAL)
     labels = define_labels(base_normal, base_exec, False)
     features = base_normal + base_exec
@@ -367,7 +365,6 @@ def isolation_forest(base_normal, base_exec):
     print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
     print("")
 
-    # return clf
     return
 
 
