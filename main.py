@@ -332,9 +332,9 @@ def one_class_svm(base_normal, base_exec):
     onesvm.fit(trainX)
     y_pred = onesvm.predict(X_test)
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
     print("")
 
     return
@@ -362,9 +362,9 @@ def isolation_forest(base_normal, base_exec):
     clf.fit(trainX)
     y_pred = clf.predict(X_test)
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
+    print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
+    print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
     print("")
 
     # return clf
