@@ -96,16 +96,16 @@ def define_labels(base_normal, base_exec, multi):
     return labels
 
 
-def get_features():
+def get_features(version):
 
-    path = FILES_PATH.format(v="v2", b="normal")
+    path = FILES_PATH.format(v=version, b="normal")
     base_normal = []
     base_exec = []
 
     for file in os.listdir(path):
         base_normal.extend(retrieve_dataset(os.path.join(path, file)))
 
-    path = FILES_PATH.format(v="v2", b="exec")
+    path = FILES_PATH.format(v=version, b="exec")
 
     for file_exec in os.listdir(path):
         base_exec.extend(retrieve_dataset(os.path.join(path, file_exec)))
@@ -206,7 +206,7 @@ def kneighbors(base_normal, base_exec):
 
     knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
 
-    print("[...] Training the model")
+    # print("[...] Training the model")
     knn.fit(X_train, y_train)
 
     y_pred = knn.predict(X_test)
@@ -370,15 +370,19 @@ def isolation_forest(base_normal, base_exec):
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('window_size', help='window size')
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("window_size", help="Window size", type=int)
+    parser.add_argument("-d", "--dataset", help="Dataset version to use", choices=["v1", "v2"], default="v2")
     args = parser.parse_args()
 
-    WINDOW_SIZE = int(args.window_size)
+    if args.window_size <= 0:
+        raise argparse.ArgumentTypeError("window_size must be greater than 0")
 
-    print('\n --- WINDOW_SIZE = ' + str(WINDOW_SIZE) + ' --- \n')
+    WINDOW_SIZE = args.window_size
 
-    base_normal, base_exec = get_features()
+    print(" ".join(("\n --- WINDOW_SIZE =", str(WINDOW_SIZE), "--- \n")))
+
+    base_normal, base_exec = get_features(args.dataset)
     # print("LEN NORMAL:", len(base_normal))
     # print("LEN EXEC:", len(base_exec))
 
