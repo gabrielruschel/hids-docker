@@ -15,6 +15,8 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import precision_score
 
+import numpy as np
+
 import argparse
 import os
 
@@ -26,6 +28,8 @@ LABEL_MULT_ANORMAL = 1
 
 LABEL_ONE_NORMAL = 1
 LABEL_ONE_ANORMAL = -1
+
+RUNS = 10
 
 # BASE_NORMAL         = 'wordpress/v1/wordpress_normal_1'
 # BASE_EXEC           = 'wordpress/v1/wordpress_exec_1_teste1'
@@ -156,37 +160,43 @@ def naive_bayes(base_normal, base_exec):
 
     print("\n> Naive Bayes")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    gnb = GaussianNB()
+        gnb = GaussianNB()
+        gnb.fit(X_train, y_train)
+        y_pred = gnb.predict(X_test)
+
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
+
+    results = np.mean(results, axis=0)
+
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
+    print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+
+    # gnb = GaussianNB()
 
     # print("\n[...] Training the model")
-    gnb.fit(X_train, y_train)
+    # gnb.fit(X_train, y_train)
 
-    y_pred = gnb.predict(X_test)
+    # y_pred = gnb.predict(X_test)
 
-    # base_teste = retrieve_dataset(BASE_EXEC_TESTE)
-    # labels_teste = []
-
-    # for elem in base_teste:
-    #     labels_teste.append(1)
-
-    # predict = gnb.predict(base_teste)
-
-    # print("\nWindows base normal: ",len_normal)
-    # print("\nWindows base exec: ",len_exec)
-    # print("\nWindows base teste: ",len(base_teste))
-    # print("\nAccuracy: ", metrics.accuracy_score(labels_teste,predict))
-
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
-    print("")
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    # print("")
 
     return
 
@@ -195,6 +205,8 @@ def kneighbors(base_normal, base_exec):
 
     print("\n> K-Nearest Neighbors")
 
+    results = []
+
     print("N_NEIGHBORS", str(N_NEIGHBORS))
 
     print("[...] Retrieving datasets and labels")
@@ -202,19 +214,36 @@ def kneighbors(base_normal, base_exec):
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
+        knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
+        knn.fit(X_train, y_train)
+        y_pred = knn.predict(X_test)
 
-    # print("[...] Training the model")
-    knn.fit(X_train, y_train)
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
 
-    y_pred = knn.predict(X_test)
+    results = np.mean(results, axis=0)
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
+    #
+    # # print("[...] Training the model")
+    # knn.fit(X_train, y_train)
+    #
+    # y_pred = knn.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    # print("")
 
     return
 
@@ -223,22 +252,42 @@ def random_forest(base_normal, base_exec):
 
     print("\n> Random Forest")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    rfc = RandomForestClassifier(n_estimators=100)
+        rfc = RandomForestClassifier(n_estimators=100)
 
-    rfc.fit(X_train, y_train)
-    y_pred = rfc.predict(X_test)
+        rfc.fit(X_train, y_train)
+        y_pred = rfc.predict(X_test)
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
+
+    results = np.mean(results, axis=0)
+
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # rfc = RandomForestClassifier(n_estimators=100)
+    #
+    # rfc.fit(X_train, y_train)
+    # y_pred = rfc.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    # print("")
 
     return
 
@@ -246,22 +295,41 @@ def random_forest(base_normal, base_exec):
 def ada_boost(base_normal, base_exec):
     print("\n> Ada Boost")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
+        abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
+        abc.fit(X_train, y_train)
+        y_pred = abc.predict(X_test)
 
-    abc.fit(X_train, y_train)
-    y_pred = abc.predict(X_test)
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    results = np.mean(results, axis=0)
+
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
+    #
+    # abc.fit(X_train, y_train)
+    # y_pred = abc.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    # print("")
 
     return
 
@@ -269,22 +337,41 @@ def ada_boost(base_normal, base_exec):
 def multilayer_perceptron(base_normal, base_exec):
     print("\n> Multilayer Perceptron")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_MULT_NORMAL, LABEL_MULT_ANORMAL)
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    mlp = MLPClassifier()
+        mlp = MLPClassifier()
+        mlp.fit(X_train, y_train)
+        y_pred = mlp.predict(X_test)
 
-    mlp.fit(X_train, y_train)
-    y_pred = mlp.predict(X_test)
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary'))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary'))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    results = np.mean(results, axis=0)
+
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # mlp = MLPClassifier()
+    #
+    # mlp.fit(X_train, y_train)
+    # y_pred = mlp.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary'))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary'))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary'))
+    # print("")
 
     return
 
@@ -312,28 +399,52 @@ def multilayer_perceptron(base_normal, base_exec):
 def one_class_svm(base_normal, base_exec):
     print("\n> One Class SVM")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_ONE_NORMAL, LABEL_ONE_ANORMAL)
     labels = define_labels(base_normal, base_exec, False)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    onesvm = OneClassSVM(gamma='scale', nu=0.01)
-    # print("\n[...] Training model")
-    trainX = []
+        onesvm = OneClassSVM(gamma='scale', nu=0.01)
+        trainX = []
+        for x, y in zip(X_train, y_train):
+            if (y == 1):
+                trainX.append(x)
 
-    for x, y in zip(X_train, y_train):
-        if (y == 1):
-            trainX.append(x)
+        onesvm.fit(trainX)
+        y_pred = onesvm.predict(X_test)
 
-    onesvm.fit(trainX)
-    y_pred = onesvm.predict(X_test)
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
+    results = np.mean(results, axis=0)
+
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # onesvm = OneClassSVM(gamma='scale', nu=0.01)
+    # # print("\n[...] Training model")
+    # trainX = []
+    #
+    # for x, y in zip(X_train, y_train):
+    #     if (y == 1):
+    #         trainX.append(x)
+    #
+    # onesvm.fit(trainX)
+    # y_pred = onesvm.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("")
 
     return
 
@@ -342,28 +453,52 @@ def isolation_forest(base_normal, base_exec):
 
     print("\n> Isolation Forest")
 
+    results = []
+
     print("[...] Retrieving datasets and labels")
     # features, labels = get_features_labels(LABEL_ONE_NORMAL, LABEL_ONE_ANORMAL)
     labels = define_labels(base_normal, base_exec, False)
     features = base_normal + base_exec
 
-    X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    for i in range(RUNS):
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
 
-    clf = IsolationForest()
+        clf = IsolationForest()
+        trainX = []
+        for x, y in zip(X_train, y_train):
+            if (y == 1):
+                trainX.append(x)
 
-    trainX = []
+        clf.fit(trainX)
+        y_pred = clf.predict(X_test)
 
-    for x, y in zip(X_train, y_train):
-        if (y == 1):
-            trainX.append(x)
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        results.append(list(score))
 
-    clf.fit(trainX)
-    y_pred = clf.predict(X_test)
+    results = np.mean(results, axis=0)
 
-    print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
-    print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
-    print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
+    print("precision_score:", results[0])
+    print("recall_score:", results[1])
+    print("f1_score:", results[2])
     print("")
+
+    # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
+    #
+    # clf = IsolationForest()
+    #
+    # trainX = []
+    #
+    # for x, y in zip(X_train, y_train):
+    #     if (y == 1):
+    #         trainX.append(x)
+    #
+    # clf.fit(trainX)
+    # y_pred = clf.predict(X_test)
+    #
+    # print("f1_score:", f1_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("recall_score:", recall_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("precision_score:", precision_score(y_test, y_pred, average='binary', pos_label=-1))
+    # print("")
 
     return
 
@@ -389,8 +524,8 @@ if __name__ == '__main__':
     naive_bayes(base_normal, base_exec)
     kneighbors(base_normal, base_exec)
     random_forest(base_normal, base_exec)
-    multilayer_perceptron(base_normal, base_exec)
+    # multilayer_perceptron(base_normal, base_exec)
     ada_boost(base_normal, base_exec)
 
-    one_class_svm(base_normal, base_exec)
-    isolation_forest(base_normal, base_exec)
+    # one_class_svm(base_normal, base_exec)
+    # isolation_forest(base_normal, base_exec)
