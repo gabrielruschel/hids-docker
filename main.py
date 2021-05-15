@@ -418,7 +418,7 @@ def one_class_svm(base_normal, base_exec):
         onesvm.fit(trainX)
         y_pred = onesvm.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -472,7 +472,7 @@ def isolation_forest(base_normal, base_exec):
         clf.fit(trainX)
         y_pred = clf.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
