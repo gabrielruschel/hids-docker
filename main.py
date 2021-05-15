@@ -168,7 +168,7 @@ def naive_bayes(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         gnb = GaussianNB()
         gnb.fit(X_train, y_train)
@@ -215,7 +215,7 @@ def kneighbors(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
         knn.fit(X_train, y_train)
@@ -260,7 +260,7 @@ def random_forest(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         rfc = RandomForestClassifier(n_estimators=100)
 
@@ -303,7 +303,7 @@ def ada_boost(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
         abc.fit(X_train, y_train)
@@ -345,7 +345,7 @@ def multilayer_perceptron(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         mlp = MLPClassifier()
         mlp.fit(X_train, y_train)
@@ -407,7 +407,7 @@ def one_class_svm(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         onesvm = OneClassSVM(gamma='scale', nu=0.01)
         trainX = []
@@ -461,7 +461,7 @@ def isolation_forest(base_normal, base_exec):
     features = base_normal + base_exec
 
     for i in range(RUNS):
-        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5)
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
         clf = IsolationForest()
         trainX = []
