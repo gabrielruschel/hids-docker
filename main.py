@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import precision_score
+from sklearn.metrics import accuracy_score
 
 import numpy as np
 
@@ -29,7 +30,7 @@ LABEL_MULT_ANORMAL = 1
 LABEL_ONE_NORMAL = 1
 LABEL_ONE_ANORMAL = -1
 
-RUNS = 10
+RUNS = 1
 
 # BASE_NORMAL         = 'wordpress/v1/wordpress_normal_1'
 # BASE_EXEC           = 'wordpress/v1/wordpress_exec_1_teste1'
@@ -75,9 +76,13 @@ def sliding_window_raw(seq):
         yield result
 
 
-def retrieve_dataset(filename):
+def retrieve_dataset(filename, filter):
+
     with open(filename, 'r') as input_file:
-        dataset = list(sliding_window_filter(input_file))
+        if filter == "raw":
+            dataset = list(sliding_window_raw(input_file))
+        else:
+            dataset = list(sliding_window_filter(input_file))
 
     return dataset
 
@@ -100,19 +105,19 @@ def define_labels(base_normal, base_exec, multi):
     return labels
 
 
-def get_features(version):
+def get_features(version, filter="raw"):
 
     path = FILES_PATH.format(v=version, b="normal")
     base_normal = []
     base_exec = []
 
     for file in os.listdir(path):
-        base_normal.extend(retrieve_dataset(os.path.join(path, file)))
+        base_normal.extend(retrieve_dataset(os.path.join(path, file), filter))
 
     path = FILES_PATH.format(v=version, b="exec")
 
     for file_exec in os.listdir(path):
-        base_exec.extend(retrieve_dataset(os.path.join(path, file_exec)))
+        base_exec.extend(retrieve_dataset(os.path.join(path, file_exec), filter))
 
     return base_normal, base_exec
 
@@ -174,7 +179,7 @@ def naive_bayes(base_normal, base_exec):
         gnb.fit(X_train, y_train)
         y_pred = gnb.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -182,6 +187,7 @@ def naive_bayes(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -217,11 +223,11 @@ def kneighbors(base_normal, base_exec):
     for i in range(RUNS):
         X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
-        knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS)
+        knn = KNeighborsClassifier(n_neighbors=N_NEIGHBORS, n_jobs=-1)
         knn.fit(X_train, y_train)
         y_pred = knn.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -229,6 +235,7 @@ def kneighbors(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -262,12 +269,12 @@ def random_forest(base_normal, base_exec):
     for i in range(RUNS):
         X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
-        rfc = RandomForestClassifier(n_estimators=100)
+        rfc = RandomForestClassifier(n_estimators=100, n_jobs=-1)
 
         rfc.fit(X_train, y_train)
         y_pred = rfc.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -275,6 +282,7 @@ def random_forest(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -305,11 +313,11 @@ def ada_boost(base_normal, base_exec):
     for i in range(RUNS):
         X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
-        abc = AdaBoostClassifier(base_estimator=RandomForestClassifier())
+        abc = AdaBoostClassifier(base_estimator=RandomForestClassifier(n_jobs=-1))
         abc.fit(X_train, y_train)
         y_pred = abc.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -317,6 +325,7 @@ def ada_boost(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -351,7 +360,7 @@ def multilayer_perceptron(base_normal, base_exec):
         mlp.fit(X_train, y_train)
         y_pred = mlp.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'))
+        score = (precision_score(y_test, y_pred, average='binary'), recall_score(y_test, y_pred, average='binary'), f1_score(y_test, y_pred, average='binary'), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -359,6 +368,7 @@ def multilayer_perceptron(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -418,7 +428,7 @@ def one_class_svm(base_normal, base_exec):
         onesvm.fit(trainX)
         y_pred = onesvm.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1))
+        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -426,6 +436,7 @@ def one_class_svm(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -463,7 +474,7 @@ def isolation_forest(base_normal, base_exec):
     for i in range(RUNS):
         X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=2**i)
 
-        clf = IsolationForest()
+        clf = IsolationForest(n_jobs=-1)
         trainX = []
         for x, y in zip(X_train, y_train):
             if (y == 1):
@@ -472,7 +483,7 @@ def isolation_forest(base_normal, base_exec):
         clf.fit(trainX)
         y_pred = clf.predict(X_test)
 
-        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1))
+        score = (precision_score(y_test, y_pred, average='binary', pos_label=-1), recall_score(y_test, y_pred, average='binary', pos_label=-1), f1_score(y_test, y_pred, average='binary', pos_label=-1), accuracy_score(y_test, y_pred))
         results.append(list(score))
 
     results = np.mean(results, axis=0)
@@ -480,6 +491,7 @@ def isolation_forest(base_normal, base_exec):
     print("precision_score:", results[0])
     print("recall_score:", results[1])
     print("f1_score:", results[2])
+    print("accuracy_score:", results[3])
     print("")
 
     # X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=42)
@@ -508,6 +520,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("window_size", help="Window size", type=int)
     parser.add_argument("-d", "--dataset", help="Dataset version to use", choices=["v1", "v2"], default="v2")
+    parser.add_argument("-f", "--filter", help="Filter mode", choices=["raw", "filter"], default="raw")
     args = parser.parse_args()
 
     if args.window_size <= 0:
@@ -515,17 +528,17 @@ if __name__ == '__main__':
 
     WINDOW_SIZE = args.window_size
 
-    print(" ".join(("\n --- WINDOW_SIZE =", str(WINDOW_SIZE), "--- \n")))
+    print(" ".join(("\n --- WINDOW_SIZE =", str(WINDOW_SIZE), "({}) --- \n".format(args.filter))))
 
-    base_normal, base_exec = get_features(args.dataset)
+    base_normal, base_exec = get_features(args.dataset, args.filter)
     # print("LEN NORMAL:", len(base_normal))
     # print("LEN EXEC:", len(base_exec))
 
     naive_bayes(base_normal, base_exec)
     kneighbors(base_normal, base_exec)
     random_forest(base_normal, base_exec)
-    # multilayer_perceptron(base_normal, base_exec)
+    multilayer_perceptron(base_normal, base_exec)
     ada_boost(base_normal, base_exec)
 
-    # one_class_svm(base_normal, base_exec)
-    # isolation_forest(base_normal, base_exec)
+    one_class_svm(base_normal, base_exec)
+    isolation_forest(base_normal, base_exec)
