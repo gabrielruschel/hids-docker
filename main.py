@@ -30,7 +30,7 @@ LABEL_MULT_ANORMAL = 1
 LABEL_ONE_NORMAL = 1
 LABEL_ONE_ANORMAL = -1
 
-RUNS = 1
+RUNS = 10
 
 # BASE_NORMAL         = 'wordpress/v1/wordpress_normal_1'
 # BASE_EXEC           = 'wordpress/v1/wordpress_exec_1_teste1'
