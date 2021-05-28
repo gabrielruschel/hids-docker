@@ -13,22 +13,13 @@ In this repository we present a docker dataset based on system calls and the sou
 
 ## HIDS Docker Information ##
 
-Published in Brazilian Symposium on Information and Computational Systems Security (SBSeg) 2020 - XIV WORKSHOP OF SCIENTIFIC INITIATION AND GRADUATION WORKS (WTICG):
+Published in:
 ```
-@inproceedings{paper1,
+@inproceedings{paper,
     author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
-    title={Detecção de Anomalias: Estudo de Técnicas de Identificação de Ataques em um Ambiente de Contêiner},
-    year={2020},
-    series={Undergraduate Research Workshop - Brazilian Security Symposium (WTICG - SBSeg)}
-}
-```
-Paper submitted to Regional Workshop on Information Security and Computer Systems (WRSeg) in the XVIII Regional School of Computer Networks (ERRC 2020):
-```
-@inproceedings{paper2,
-    author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
-    title={Sliding Window: The Impact of Trace Size in Anomaly Detection System for Containers Through Machine Learning},
-    year={2020},
-    series={Submitted to Regional Workshop on Information Security and Computer Systems (WRSeg - ERRC)}
+    title={},
+    year={2021},
+    series={}
 }
 ```
 
@@ -56,6 +47,7 @@ Clone this repository
 
 ```
 git clone https://github.com/gabrielruschel/hids-docker
+git checkout v2
 ```
 
 And install the dependencies using pip3
