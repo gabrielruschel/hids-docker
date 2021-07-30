@@ -15,11 +15,11 @@ In this repository we present a docker dataset based on system calls and the sou
 
 Published in:
 ```
-@inproceedings{paper,
+@inproceedings{paper3,
     author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
-    title={},
+    title={Taking a Peek: An Evaluation of Anomaly Detection Using System calls for Containers},
     year={2021},
-    series={}
+    series={26th IEEE Symposium on Computers and Communications (ISCC 2021)}
 }
 ```
 
