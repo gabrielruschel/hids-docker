@@ -28,7 +28,7 @@ Paper submitted to Regional Workshop on Information Security and Computer System
     author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
     title={Sliding Window: The Impact of Trace Size in Anomaly Detection System for Containers Through Machine Learning},
     year={2020},
-    series={Submitted to Regional Workshop on Information Security and Computer Systems (WRSeg - ERRC)}
+    series={Regional Workshop on Information Security and Computer Systems (WRSeg - ERRC)}
 }
 ```
 
