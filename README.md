@@ -22,6 +22,25 @@ Published in:
     series={26th IEEE Symposium on Computers and Communications (ISCC 2021)}
 }
 ```
+Paper submitted to Regional Workshop on Information Security and Computer Systems (WRSeg) in the XVIII Regional School of Computer Networks (ERRC 2020):
+```
+@inproceedings{paper2,
+    author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
+    title={Sliding Window: The Impact of Trace Size in Anomaly Detection System for Containers Through Machine Learning},
+    year={2020},
+    series={Regional Workshop on Information Security and Computer Systems (WRSeg - ERRC)}
+>>>>>>> 169977e6219223808fb32a7024495fab05677f23
+}
+```
+Published in Brazilian Symposium on Information and Computational Systems Security (SBSeg) 2020 - XIV WORKSHOP OF SCIENTIFIC INITIATION AND GRADUATION WORKS (WTICG):
+```
+@inproceedings{paper1,
+    author={Gabriel Ruschel Castanhel and Tiago Heinrich and Fabrício Ceschin and Carlos A. Maziero},
+    title={Detecção de Anomalias: Estudo de Técnicas de Identificação de Ataques em um Ambiente de Contêiner},
+    year={2020},
+    series={Undergraduate Research Workshop - Brazilian Security Symposium (WTICG - SBSeg)}
+}
+```
 
 ## How do I get set up? ##
 * python 3.8.5
@@ -47,7 +66,6 @@ Clone this repository
 
 ```
 git clone https://github.com/gabrielruschel/hids-docker
-git checkout v2
 ```
 
 And install the dependencies using pip3
@@ -62,12 +80,15 @@ pip3 install -r requirements.txt
 To run the tests, just use the following command
 
 ```
-python3 main.py <tamanho_janela>
+python3 main.py [-d {sbseg,iscc}] [-f {raw,filter}] <window_size>
 ```
 
-Where the `tamanho_janela` (`window_size`) argument specifies the size of the window used in the tests.
+Where the `-d` argument specifies which dataset to use (default: iscc)
+The `-f` argument specifies which filter mode to use (default: raw)
+And finally, the `window_size` argument specifies the size of the window be used in the tests.
+The `-h` argument shows the help message
 
-It is possible to edit in the main section of the code which specific methods you want to test, and also change the form of construction of the windows (with all system calls or with filtering), changing the function used in `retrieve_dataset ()` (`sliding_window_raw` to work with all system calls or `sliding_window_filter` to perform the filtering).
+It is possible to edit in the main section of the code which specific methods you want to test
 
 ## Contribution guidelines ##
 * [gabrielruschel](https://github.com/gabrielruschel) (Gabriel Ruschel Castanhel) (owner)
