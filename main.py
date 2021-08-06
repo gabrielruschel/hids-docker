@@ -155,7 +155,6 @@ def kneighbors(base_normal, base_exec):
     print("N_NEIGHBORS", str(N_NEIGHBORS))
 
     print("[...] Retrieving datasets and labels")
-    # features,labels = get_features_labels(LABEL_MULT_NORMAL,LABEL_MULT_ANORMAL)
     labels = define_labels(base_normal, base_exec, True)
     features = base_normal + base_exec
 
@@ -367,7 +366,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("window_size", help="Window size", type=int)
-    parser.add_argument("-d", "--dataset", help="Dataset version to use", choices=["v1", "v2"], default="v2")
+    parser.add_argument("-d", "--dataset", help="Dataset version to use", choices=["sbseg", "iscc"], default="iscc")
     parser.add_argument("-f", "--filter", help="Filter mode", choices=["raw", "filter"], default="raw")
     args = parser.parse_args()
 
