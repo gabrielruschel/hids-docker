@@ -82,10 +82,10 @@ To run the tests, just use the following command
 ```
 python3 main.py [-d {sbseg,iscc}] [-f {raw,filter}] <window_size>
 ```
+* `-d`: specifies which dataset to use (default: iscc)
+* `-f`: specifies which filter mode to use (default: raw)
+* `window_size`: specifies the size of the window be used in the tests.
 
-Where the `-d` argument specifies which dataset to use (default: iscc)
-The `-f` argument specifies which filter mode to use (default: raw)
-And finally, the `window_size` argument specifies the size of the window be used in the tests.
 The `-h` argument shows the help message
 
 It is possible to edit in the main section of the code which specific methods you want to test
